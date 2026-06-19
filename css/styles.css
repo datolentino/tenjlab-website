@@ -148,26 +148,32 @@ h3 { font-size: 1.2rem; margin: 0 0 .3em; }
 }
 
 /* ---------- Publications ---------- */
-.pub-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 18px; }
+.pub-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
 .pub {
   background: var(--bg); border: 1px solid var(--line); border-left: 4px solid var(--ucla-blue);
-  border-radius: 10px; padding: 18px 22px;
+  border-radius: 10px; padding: 15px 20px;
 }
 .pub__title { font-weight: 700; color: var(--ucla-darker); }
 .pub__meta  { color: var(--muted); font-size: .92rem; }
 .pub__authors { font-size: .92rem; }
-.pub__visual { margin: 14px 0 0; }
+.pub__visual { margin: 10px 0 0; }
 .pub__visual svg {
   width: 100%; height: auto; display: block;
   border: 1px solid var(--line); border-radius: 12px; overflow: hidden;
 }
-.pub__plain {
-  margin-top: 12px; font-size: .92rem; color: var(--ink);
-  background: var(--bg-soft); border-radius: 8px; padding: 11px 14px;
+/* Collapsible expanders for summary + visual abstract */
+.pub__more { margin-top: 10px; }
+.pub__more > summary {
+  cursor: pointer; list-style: none; display: inline-flex; align-items: center; gap: 6px;
+  font-weight: 700; font-size: .74rem; text-transform: uppercase; letter-spacing: .06em;
+  color: var(--ucla-blue); user-select: none;
 }
-.pub__plain .label {
-  display: block; font-weight: 700; font-size: .72rem; text-transform: uppercase;
-  letter-spacing: .07em; color: var(--ucla-blue); margin-bottom: 3px;
+.pub__more > summary::-webkit-details-marker { display: none; }
+.pub__more > summary::before { content: "\25B8"; display: inline-block; transition: transform .15s ease; }
+.pub__more[open] > summary::before { transform: rotate(90deg); }
+.pub__more-body {
+  margin-top: 8px; font-size: .92rem; color: var(--ink);
+  background: var(--bg-soft); border-radius: 8px; padding: 11px 14px;
 }
 
 /* ---------- News ---------- */
