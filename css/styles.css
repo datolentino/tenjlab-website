@@ -156,6 +156,14 @@ h3 { font-size: 1.2rem; margin: 0 0 .3em; }
 .pub__title { font-weight: 700; color: var(--ucla-darker); }
 .pub__meta  { color: var(--muted); font-size: .92rem; }
 .pub__authors { font-size: .92rem; }
+.pub__plain {
+  margin-top: 12px; font-size: .92rem; color: var(--ink);
+  background: var(--bg-soft); border-radius: 8px; padding: 11px 14px;
+}
+.pub__plain .label {
+  display: block; font-weight: 700; font-size: .72rem; text-transform: uppercase;
+  letter-spacing: .07em; color: var(--ucla-blue); margin-bottom: 3px;
+}
 
 /* ---------- News ---------- */
 .news-item { border-bottom: 1px solid var(--line); padding: 28px 0; }
