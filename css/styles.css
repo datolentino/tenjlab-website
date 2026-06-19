@@ -58,7 +58,7 @@ h3 { font-size: 1.2rem; margin: 0 0 .3em; }
 }
 .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
 .brand__mark { height: 44px; width: auto; display: block; flex: none; }
-.brand__name { font-weight: 800; color: var(--ucla-darker); font-size: 1.15rem; }
+.brand__name { font-family: "Bricolage Grotesque", "Inter", sans-serif; font-weight: 800; color: var(--ucla-darker); font-size: 1.3rem; letter-spacing: -0.01em; }
 .brand__sub  { display: block; font-weight: 500; color: var(--muted); font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; }
 
 .nav-links { display: flex; gap: 4px; list-style: none; margin: 0; padding: 0; align-items: center; }
