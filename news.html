@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lab News — TenJ Lab</title>
+  <meta name="description" content="News and updates from the TenJ Lab at the UCLA School of Nursing." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="index.html">
+        <span class="brand__mark">TenJ</span>
+        <span>
+          <span class="brand__name">TenJ Lab</span>
+          <span class="brand__sub">UCLA School of Nursing</span>
+        </span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="index.html">About</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="news.html" class="active">Lab News</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="section">
+    <div class="container" style="max-width: 760px;">
+      <h1>Lab news</h1>
+      <p class="lead">Updates, conference presentations, and research highlights from the TenJ Lab.</p>
+
+      <!-- Newest first. Copy a .news-item block to add a new post. -->
+      <article class="news-item">
+        <div class="news-item__date">2025</div>
+        <h2>UCLA Nursing PhD students present research at the 2025 WIN Conference</h2>
+        <p>Researchers from the TenJ Lab at the UCLA School of Nursing presented at the 2025 Western Institute of Nursing (WIN) Conference in Spokane, Washington. PhD students Dante Anthony Tolentino and Paul Boy shared their research findings, contributing to advances in the field.</p>
+      </article>
+
+      <article class="news-item">
+        <div class="news-item__date">2024</div>
+        <h2>UCLA study links colonial mentality to diabetes self-management in Filipino Americans</h2>
+        <p>A UCLA School of Nursing investigation explores connections between cultural factors and type 2 diabetes management in Filipino American populations. The research, directed by Dr. Dante Anthony Tolentino, highlights how community members leverage family connections as a resource despite systemic obstacles, and emphasizes the need for culturally tailored care approaches in healthcare delivery.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>TenJ Lab</h4>
+          <p>UCLA School of Nursing.<br />Nursing science &amp; informatics for diabetes health equity.</p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="index.html">About</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="news.html">Lab News</a></li>
+            <li><a href="publications.html">Publications</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="mailto:tenjlab@sonnet.ucla.edu">tenjlab@sonnet.ucla.edu</a></li>
+            <li><a href="https://twitter.com/an2ny">Twitter / X</a></li>
+            <li><a href="https://www.linkedin.com/in/atolen/">LinkedIn</a></li>
+            <li><a href="https://www.instagram.com/tenjlab">Instagram @tenjlab</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">&copy; <span id="year">2026</span> TenJ Lab, UCLA School of Nursing. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

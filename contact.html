@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — TenJ Lab</title>
+  <meta name="description" content="Get in touch with the TenJ Lab at the UCLA School of Nursing." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="index.html">
+        <span class="brand__mark">TenJ</span>
+        <span>
+          <span class="brand__name">TenJ Lab</span>
+          <span class="brand__sub">UCLA School of Nursing</span>
+        </span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="index.html">About</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="news.html">Lab News</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="section">
+    <div class="container grid grid--2" style="align-items:start;">
+      <div>
+        <h1>Let&rsquo;s chat</h1>
+        <p class="lead">Questions about our research, participation, or collaboration? Reach out &mdash; we&rsquo;d love to hear from you.</p>
+
+        <p style="margin-top: 24px;"><strong>Email</strong><br />
+          <a href="mailto:tenjlab@sonnet.ucla.edu">tenjlab@sonnet.ucla.edu</a></p>
+
+        <p><strong>Find us</strong><br />
+          UCLA School of Nursing<br />
+          Los Angeles, CA</p>
+
+        <p><strong>Follow along</strong><br />
+          <a href="https://twitter.com/an2ny">Twitter / X</a> &middot;
+          <a href="https://www.linkedin.com/in/atolen/">LinkedIn</a> &middot;
+          <a href="https://www.instagram.com/tenjlab">Instagram @tenjlab</a></p>
+      </div>
+
+      <div class="card">
+        <!--
+          NOTE: A plain static site can't email a form by itself.
+          The form below uses Formspree (free) — replace YOUR_FORM_ID after
+          creating a free form at https://formspree.io. Until then, the email
+          link above works for all contact.
+        -->
+        <h3>Send a message</h3>
+        <form class="form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <div class="grid grid--2" style="gap:16px;">
+            <div>
+              <label for="first">First name</label>
+              <input id="first" name="first_name" type="text" required />
+            </div>
+            <div>
+              <label for="last">Last name</label>
+              <input id="last" name="last_name" type="text" required />
+            </div>
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required />
+          </div>
+          <div>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+          <button class="btn btn--primary" type="submit" style="border:0; cursor:pointer;">Send message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>TenJ Lab</h4>
+          <p>UCLA School of Nursing.<br />Nursing science &amp; informatics for diabetes health equity.</p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="index.html">About</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="news.html">Lab News</a></li>
+            <li><a href="publications.html">Publications</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="mailto:tenjlab@sonnet.ucla.edu">tenjlab@sonnet.ucla.edu</a></li>
+            <li><a href="https://twitter.com/an2ny">Twitter / X</a></li>
+            <li><a href="https://www.linkedin.com/in/atolen/">LinkedIn</a></li>
+            <li><a href="https://www.instagram.com/tenjlab">Instagram @tenjlab</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">&copy; <span id="year">2026</span> TenJ Lab, UCLA School of Nursing. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects — TenJ Lab</title>
+  <meta name="description" content="Current and ongoing research projects at the TenJ Lab, UCLA School of Nursing." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="index.html">
+        <span class="brand__mark">TenJ</span>
+        <span>
+          <span class="brand__name">TenJ Lab</span>
+          <span class="brand__sub">UCLA School of Nursing</span>
+        </span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="index.html">About</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="news.html">Lab News</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <h1>Current projects</h1>
+      <p class="lead">Ongoing research and intervention work in the lab.</p>
+
+      <div class="grid grid--2" style="margin-top: 32px;">
+
+        <div class="card">
+          <h3>Diabetes@Work</h3>
+          <p>A culturally and linguistically tailored, self-paced diabetes management course designed for Filipinos &mdash; meeting community members where they are with accessible, relevant education.</p>
+        </div>
+
+        <div class="card">
+          <h3>RSJ Study</h3>
+          <p>A study examining diabetes experiences in the Filipino American community.</p>
+          <p style="color: var(--muted); font-size: .9rem;"><strong>Recruitment status:</strong> We are no longer recruiting participants for the RSJ study at this time. Thank you to everyone who took part.</p>
+        </div>
+
+      </div>
+
+      <div class="card" style="margin-top: 32px;">
+        <h3>Interested in participating or collaborating?</h3>
+        <p>We welcome community partners, collaborators, and prospective participants for future studies. <a href="contact.html">Get in touch</a> or email <a href="mailto:tenjlab@sonnet.ucla.edu">tenjlab@sonnet.ucla.edu</a>.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>TenJ Lab</h4>
+          <p>UCLA School of Nursing.<br />Nursing science &amp; informatics for diabetes health equity.</p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="index.html">About</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="news.html">Lab News</a></li>
+            <li><a href="publications.html">Publications</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="mailto:tenjlab@sonnet.ucla.edu">tenjlab@sonnet.ucla.edu</a></li>
+            <li><a href="https://twitter.com/an2ny">Twitter / X</a></li>
+            <li><a href="https://www.linkedin.com/in/atolen/">LinkedIn</a></li>
+            <li><a href="https://www.instagram.com/tenjlab">Instagram @tenjlab</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">&copy; <span id="year">2026</span> TenJ Lab, UCLA School of Nursing. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
