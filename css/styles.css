@@ -120,6 +120,8 @@ h3 { font-size: 1.2rem; margin: 0 0 .3em; }
 
 .group-title { margin-top: 8px; border-left: 4px solid var(--ucla-gold); padding-left: 12px; }
 
+.proj-meta { color: var(--ucla-blue); font-weight: 600; font-size: .88rem; margin: 0 0 10px; }
+
 /* Story section with portrait (e.g. Jessie) */
 .story-grid { display: grid; grid-template-columns: 280px 1fr; gap: 40px; align-items: center; }
 .story-grid figure { margin: 0; }
