@@ -57,12 +57,7 @@ h3 { font-size: 1.2rem; margin: 0 0 .3em; }
   max-width: var(--max); margin: 0 auto; padding: 14px 24px;
 }
 .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-.brand__mark {
-  width: 40px; height: 40px; border-radius: 10px;
-  background: var(--ucla-darker); color: var(--ucla-gold);
-  display: grid; place-items: center; font-weight: 800; font-size: 1rem;
-  letter-spacing: .5px;
-}
+.brand__mark { width: 44px; height: 44px; display: block; flex: none; }
 .brand__name { font-weight: 800; color: var(--ucla-darker); font-size: 1.15rem; }
 .brand__sub  { display: block; font-weight: 500; color: var(--muted); font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; }
 
@@ -112,7 +107,7 @@ h3 { font-size: 1.2rem; margin: 0 0 .3em; }
 .person { text-align: center; }
 .person__photo {
   width: 120px; height: 120px; border-radius: 50%; margin: 0 auto 14px;
-  object-fit: cover; background: var(--bg-soft);
+  object-fit: cover; object-position: center 22%; background: var(--bg-soft);
   border: 3px solid var(--line);
 }
 .person__photo--placeholder {
