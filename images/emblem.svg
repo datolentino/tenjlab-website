@@ -1,21 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="TenJ Lab emblem">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 116 64" role="img" aria-label="TenJ Lab logo">
   <defs>
     <linearGradient id="navy" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0" stop-color="#1d4e82"/>
       <stop offset="1" stop-color="#0c2c4e"/>
     </linearGradient>
   </defs>
-  <!-- tile -->
-  <rect x="2" y="2" width="60" height="60" rx="15" fill="url(#navy)"/>
-  <rect x="2.5" y="2.5" width="59" height="59" rx="14.5" fill="none" stroke="#ffffff" stroke-opacity="0.10"/>
+  <rect x="2" y="2" width="112" height="60" rx="16" fill="url(#navy)"/>
+  <rect x="2.5" y="2.5" width="111" height="59" rx="15.5" fill="none" stroke="#ffffff" stroke-opacity="0.10"/>
   <!-- three stars of the Philippine flag -->
-  <g fill="#ffd24a">
-    <path d="M32 9.5l1.3 3.1 3.3.3-2.5 2.2.8 3.2L32 16.8l-2.9 1.7.8-3.2-2.5-2.2 3.3-.3z"/>
-    <path d="M13.5 43.5l1 2.4 2.6.2-2 1.7.6 2.5-2.2-1.3-2.2 1.3.6-2.5-2-1.7 2.6-.2z"/>
-    <path d="M50.5 43.5l1 2.4 2.6.2-2 1.7.6 2.5-2.2-1.3-2.2 1.3.6-2.5-2-1.7 2.6-.2z"/>
-  </g>
-  <!-- TJ monogram -->
-  <text x="32" y="45.5" text-anchor="middle"
-        font-family="Georgia, 'Times New Roman', serif" font-weight="700"
-        font-size="26" fill="#ffffff" letter-spacing="-1">TJ</text>
+  <text x="58" y="19" text-anchor="middle" fill="#ffd24a" font-size="12" letter-spacing="4"
+        font-family="Arial, Helvetica, sans-serif">&#9733;&#9733;&#9733;</text>
+  <!-- TenJ wordmark -->
+  <text x="58" y="49" text-anchor="middle" font-family="Arial, Helvetica, sans-serif"
+        font-weight="800" font-size="27" letter-spacing="-0.5">
+    <tspan fill="#ffffff">Ten</tspan><tspan fill="#ffd24a">J</tspan>
+  </text>
 </svg>
