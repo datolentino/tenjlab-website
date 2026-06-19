@@ -148,15 +148,20 @@ h3 { font-size: 1.2rem; margin: 0 0 .3em; }
 }
 
 /* ---------- Publications ---------- */
-.pub-list { list-style: none; padding: 0; margin: 0; column-count: 2; column-gap: 16px; }
+.pub-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
 .pub {
-  background: var(--bg); border: 1px solid var(--line); border-left: 4px solid var(--ucla-blue);
-  border-radius: 10px; padding: 15px 20px; break-inside: avoid; margin-bottom: 16px;
+  --accent: var(--ucla-blue);
+  background: var(--bg); border: 1px solid var(--line); border-left: 4px solid var(--accent);
+  border-radius: 10px; padding: 15px 20px;
 }
+.pub:nth-child(5n+1) { --accent: #2774AE; }  /* blue */
+.pub:nth-child(5n+2) { --accent: #2A9D8F; }  /* teal */
+.pub:nth-child(5n+3) { --accent: #E0A100; }  /* gold */
+.pub:nth-child(5n+4) { --accent: #E76F51; }  /* coral */
+.pub:nth-child(5n+5) { --accent: #6A4C93; }  /* violet */
 .pub__dx { width: 20px; height: 20px; vertical-align: -4px; margin-right: 5px; }
 .pub-legend { display: flex; align-items: center; gap: 6px; color: var(--muted); font-size: .9rem; margin-top: 6px; }
 .pub-legend .pub__dx { margin-right: 0; }
-@media (max-width: 760px) { .pub-list { column-count: 1; } }
 .pub__title { font-weight: 700; color: var(--ucla-darker); }
 .pub__meta  { color: var(--muted); font-size: .92rem; }
 .pub__authors { font-size: .92rem; }
@@ -170,14 +175,15 @@ h3 { font-size: 1.2rem; margin: 0 0 .3em; }
 .pub__more > summary {
   cursor: pointer; list-style: none; display: inline-flex; align-items: center; gap: 6px;
   font-weight: 700; font-size: .74rem; text-transform: uppercase; letter-spacing: .06em;
-  color: var(--ucla-blue); user-select: none;
+  color: var(--accent); user-select: none;
 }
 .pub__more > summary::-webkit-details-marker { display: none; }
 .pub__more > summary::before { content: "\25B8"; display: inline-block; transition: transform .15s ease; }
 .pub__more[open] > summary::before { transform: rotate(90deg); }
 .pub__more-body {
   margin-top: 8px; font-size: .92rem; color: var(--ink);
-  background: var(--bg-soft); border-radius: 8px; padding: 11px 14px;
+  background: color-mix(in srgb, var(--accent) 7%, #ffffff);
+  border-radius: 8px; padding: 11px 14px;
 }
 
 /* ---------- News ---------- */
