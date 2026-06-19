@@ -120,6 +120,19 @@ h3 { font-size: 1.2rem; margin: 0 0 .3em; }
 
 .group-title { margin-top: 8px; border-left: 4px solid var(--ucla-gold); padding-left: 12px; }
 
+/* Story section with portrait (e.g. Jessie) */
+.story-grid { display: grid; grid-template-columns: 280px 1fr; gap: 40px; align-items: center; }
+.story-grid figure { margin: 0; }
+.story-grid img {
+  width: 280px; height: 340px; object-fit: cover; object-position: center 20%;
+  border-radius: 16px; box-shadow: var(--shadow); display: block;
+}
+@media (max-width: 640px) {
+  .story-grid { grid-template-columns: 1fr; gap: 20px; }
+  .story-grid figure { justify-self: center; }
+  .story-grid img { width: 240px; height: 290px; }
+}
+
 /* Full-width single profile (e.g. PI / leadership) */
 .person--lead {
   display: grid; grid-template-columns: 180px 1fr; gap: 32px;
