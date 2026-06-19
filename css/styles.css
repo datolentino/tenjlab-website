@@ -78,7 +78,14 @@ h3 { font-size: 1.2rem; margin: 0 0 .3em; }
 .hero {
   background: linear-gradient(135deg, var(--ucla-darker), var(--ucla-blue));
   color: #fff; padding: 96px 0;
+  position: relative; overflow: hidden;
 }
+.hero .container { position: relative; z-index: 1; }
+.hero__flag {
+  position: absolute; top: 50%; left: -24px; transform: translateY(-50%);
+  height: 135%; width: auto; opacity: 0.12; pointer-events: none; z-index: 0;
+}
+@media (max-width: 640px) { .hero__flag { opacity: 0.08; left: -60px; } }
 .hero h1 { color: #fff; }
 .hero .lead { color: rgba(255, 255, 255, 0.9); }
 .hero .tagline { color: var(--ucla-gold); font-weight: 700; letter-spacing: .14em; text-transform: uppercase; font-size: .85rem; margin: 0 0 14px; }
