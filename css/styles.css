@@ -156,6 +156,11 @@ h3 { font-size: 1.2rem; margin: 0 0 .3em; }
 .pub__title { font-weight: 700; color: var(--ucla-darker); }
 .pub__meta  { color: var(--muted); font-size: .92rem; }
 .pub__authors { font-size: .92rem; }
+.pub__visual { margin: 14px 0 0; }
+.pub__visual svg {
+  width: 100%; height: auto; display: block;
+  border: 1px solid var(--line); border-radius: 12px; overflow: hidden;
+}
 .pub__plain {
   margin-top: 12px; font-size: .92rem; color: var(--ink);
   background: var(--bg-soft); border-radius: 8px; padding: 11px 14px;
