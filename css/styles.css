@@ -148,11 +148,15 @@ h3 { font-size: 1.2rem; margin: 0 0 .3em; }
 }
 
 /* ---------- Publications ---------- */
-.pub-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+.pub-list { list-style: none; padding: 0; margin: 0; column-count: 2; column-gap: 16px; }
 .pub {
   background: var(--bg); border: 1px solid var(--line); border-left: 4px solid var(--ucla-blue);
-  border-radius: 10px; padding: 15px 20px;
+  border-radius: 10px; padding: 15px 20px; break-inside: avoid; margin-bottom: 16px;
 }
+.pub__dx { width: 20px; height: 20px; vertical-align: -4px; margin-right: 5px; }
+.pub-legend { display: flex; align-items: center; gap: 6px; color: var(--muted); font-size: .9rem; margin-top: 6px; }
+.pub-legend .pub__dx { margin-right: 0; }
+@media (max-width: 760px) { .pub-list { column-count: 1; } }
 .pub__title { font-weight: 700; color: var(--ucla-darker); }
 .pub__meta  { color: var(--muted); font-size: .92rem; }
 .pub__authors { font-size: .92rem; }
