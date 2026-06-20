@@ -167,6 +167,8 @@ h3 { font-size: 1.2rem; margin: 0 0 .3em; }
 .pub-legend { display: flex; align-items: center; gap: 6px; color: var(--muted); font-size: .9rem; margin-top: 6px; }
 .pub-legend .pub__dx { margin-right: 0; }
 .pub__title { font-weight: 700; color: var(--ucla-darker); }
+.pub__more-link { display: inline-block; margin-top: 10px; font-weight: 700; font-size: .82rem; color: var(--ucla-blue); text-decoration: none; }
+.pub__more-link:hover { text-decoration: underline; }
 .pub__meta  { color: var(--muted); font-size: .92rem; }
 .pub__authors { font-size: .92rem; }
 .pub__visual { margin: 10px 0 0; }
