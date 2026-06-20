@@ -57,6 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
     ["👥 Meet the team", "team"],
     ["📄 Browse publications", "pubs"],
     ["📰 Latest news", "news"],
+    ["📺 In the media", "media"],
     ["🔬 Our projects", "projects"],
     ["🤝 Get involved", "involved"],
     ["✉️ Contact us", "contact"]
@@ -117,6 +118,7 @@ document.addEventListener("DOMContentLoaded", function () {
       ]), "bot"); return;
     }
     if (act === "news") { listType("Lab News", "Here&rsquo;s the latest from the lab:", [["See all lab news", "link:news.html"], BACK], 5); return; }
+    if (act === "media") { listType("Media", "Here&rsquo;s where the lab&rsquo;s work has been featured:", [["📄 Publications", "pubs"], BACK]); return; }
     if (act === "projects") { listType("Project", "Here are our current projects:", [["📄 Related publications", "pubs"], BACK]); return; }
     if (act === "involved") { add('We welcome students, collaborators, and community partners who share our commitment to health equity. The best way to start is to reach out.' + chipRow([["✉️ Contact us", "contact"], ["👥 Meet the team", "team"], BACK]), "bot"); return; }
     if (act === "contact") { add('You can reach the lab at <a href="mailto:datolentino@sonnet.ucla.edu">datolentino@sonnet.ucla.edu</a>, or use the <a href="'+base+'contact.html">Contact page</a>.' + chipRow([["🤝 Get involved", "involved"], BACK]), "bot"); return; }
@@ -134,7 +136,8 @@ document.addEventListener("DOMContentLoaded", function () {
     if (/\b(join|apply|position|positions|opening|openings|volunteer|hiring|collaborat)\b/.test(v)) { handleAction("involved"); return; }
 
     var intent = null;
-    if (/\b(member|members|team|teams|people|who|student|students|staff|faculty|researcher|researchers|scientist|scientists|mentee|mentees|leadership|colleague|colleagues)\b/.test(v)) intent = "Team";
+    if (/\b(media|press|interview|interviews|podcast|featured|feature|magazine|coverage|appearance|appearances)\b/.test(v)) intent = "Media";
+    else if (/\b(member|members|team|teams|people|who|student|students|staff|faculty|researcher|researchers|scientist|scientists|mentee|mentees|leadership|colleague|colleagues)\b/.test(v)) intent = "Team";
     else if (/\b(publication|publications|paper|papers|article|articles|study|studies|research|published|journal|finding|findings)\b/.test(v)) intent = "Publication";
     else if (/\b(news|latest|recent|update|updates|event|events|conference|conferences|defense|defence|defended|graduate|graduated|graduation|award|awards|happening)\b/.test(v)) intent = "Lab News";
     else if (/\b(project|projects|grant|grants|funding|ongoing)\b/.test(v)) intent = "Project";

@@ -409,3 +409,14 @@ h3 { font-size: 1.2rem; margin: 0 0 .3em; }
 .search-type { display: inline-block; font-size: .7rem; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; color: var(--ucla-blue); }
 .search-title { display: block; font-weight: 700; color: var(--ucla-darker); margin: 2px 0; }
 .search-snip { display: block; color: var(--muted); font-size: .9rem; }
+
+/* ---------- Media / In the media ---------- */
+.media-list { list-style: none; margin: 18px 0 0; padding: 0; display: grid; gap: 14px; }
+.media-item { background: var(--bg); border: 1px solid var(--line); border-left: 4px solid var(--ucla-blue); border-radius: 12px; padding: 16px 18px; }
+.media-item:nth-child(even) { border-left-color: var(--ucla-gold); }
+.media-item__outlet { font-size: .72rem; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; color: var(--ucla-blue); }
+.media-item:nth-child(even) .media-item__outlet { color: var(--ucla-darker); }
+.media-item__title { font-weight: 700; color: var(--ucla-darker); margin: 4px 0 5px; font-size: 1.05rem; line-height: 1.35; }
+.media-item__meta { color: var(--muted); font-size: .9rem; }
+.media-item__link { display: inline-block; margin-top: 10px; font-weight: 600; color: var(--ucla-blue); text-decoration: none; }
+.media-item__link:hover { text-decoration: underline; }
