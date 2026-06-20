@@ -279,12 +279,13 @@ h3 { font-size: 1.2rem; margin: 0 0 .3em; }
 }
 .ask-hit:hover { background: #eef4fa; }
 .ask-hit-type { display: block; font-size: .65rem; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; color: var(--ucla-blue); }
-.ask-sugg { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 6px; }
+.ask-sugg { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px; }
 .ask-sugg button {
-  border: 1px solid var(--ucla-blue); background: #fff; color: var(--ucla-blue);
-  border-radius: 999px; padding: 5px 12px; font: inherit; font-size: .8rem; font-weight: 600; cursor: pointer;
+  border: 1.5px solid var(--ucla-blue); background: #fff; color: var(--ucla-blue);
+  border-radius: 999px; padding: 9px 15px; font: inherit; font-size: .86rem; font-weight: 600;
+  cursor: pointer; line-height: 1.2; transition: background .12s ease, color .12s ease;
 }
-.ask-sugg button:hover { background: var(--ucla-blue); color: #fff; }
+.ask-sugg button:hover, .ask-sugg button:active { background: var(--ucla-blue); color: #fff; }
 .ask-form { flex: 0 0 auto; display: flex; gap: 8px; padding: 12px; border-top: 1px solid var(--line); background: #fff; }
 .ask-in { flex: 1; padding: 10px 12px; border: 1px solid var(--line); border-radius: 10px; font: inherit; font-size: .92rem; }
 .ask-in:focus { outline: none; border-color: var(--ucla-blue); }
