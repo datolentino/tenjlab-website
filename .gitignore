@@ -1,2 +1,5 @@
 .DS_Store
 .local/
+
+# Source article PDFs (kept locally, not published)
+publications/*.pdf
