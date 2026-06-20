@@ -229,6 +229,19 @@ h3 { font-size: 1.2rem; margin: 0 0 .3em; }
 .footer-grid li { margin-bottom: 8px; }
 .footer-bottom { border-top: 1px solid rgba(255,255,255,.15); margin-top: 32px; padding-top: 20px; font-size: .85rem; color: rgba(255,255,255,.6); }
 
+
+/* ---------- Back to top ---------- */
+.to-top {
+  position: fixed; right: 20px; bottom: 20px; z-index: 60;
+  width: 46px; height: 46px; border-radius: 50%; border: 0; cursor: pointer;
+  background: var(--ucla-darker); color: var(--ucla-gold); font-size: 1.4rem; line-height: 1;
+  box-shadow: 0 4px 14px rgba(0, 59, 92, 0.25);
+  opacity: 0; visibility: hidden; transform: translateY(8px);
+  transition: opacity .2s ease, transform .2s ease, visibility .2s ease, background .15s ease;
+}
+.to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+.to-top:hover { background: var(--ucla-blue); }
+
 /* ---------- Responsive ---------- */
 @media (max-width: 860px) {
   .grid--2, .grid--3, .grid--4 { grid-template-columns: repeat(2, 1fr); }
