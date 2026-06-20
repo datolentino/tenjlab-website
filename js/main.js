@@ -50,26 +50,67 @@ document.addEventListener("DOMContentLoaded", function () {
   function esc(s){ return s.replace(/[&<>]/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;"}[c]; }); }
   function add(htmlStr, who){ var d=document.createElement("div"); d.className="ask-msg ask-"+who; d.innerHTML=htmlStr; msgs.appendChild(d); msgs.scrollTop=msgs.scrollHeight; }
 
-  function search(v){
-    if(!index) return [];
-    var terms = v.toLowerCase().split(/\s+/).filter(Boolean);
-    return index.map(function(it){
+  // Words to ignore when matching (question words, generic site words, and the
+  // category trigger words that are handled by intent detection instead).
+  var STOP = ("a an the and or of to in on for is are was were be been who whom whose what when where why how which "
+    + "do does did can could will would should may might must i me my we us our you your they them their this that these those "
+    + "it its as at by with from about tell show list give find search please help want know more info information page "
+    + "lab labs team teams member members person people staff group everyone student students faculty researcher researchers "
+    + "scientist scientists mentee mentees colleague colleagues leadership "
+    + "publication publications paper papers article articles study studies research published journal finding findings work works "
+    + "news latest recent update updates event events conference conferences defense defence defended graduate graduated graduation "
+    + "award awards happening "
+    + "project projects grant grants funding ongoing current").split(" ");
+
+  function score(pool, terms){
+    if(!terms.length) return [];
+    return pool.map(function(it){
       var t=it.title.toLowerCase(), hay=(it.title+" "+it.text).toLowerCase(), s=0;
       terms.forEach(function(w){ if(t.indexOf(w)>=0) s+=3; if(hay.indexOf(w)>=0) s+=1; });
       return {it:it,s:s};
-    }).filter(function(x){return x.s>0;}).sort(function(a,b){return b.s-a.s;}).slice(0,4);
+    }).filter(function(x){return x.s>0;}).sort(function(a,b){return b.s-a.s;});
   }
 
   function respond(q){
+    if(!index){ add("One moment, I&rsquo;m still loading. Please ask again in a second.", "bot"); return; }
     var v = q.toLowerCase();
-    if (/\b(hi|hello|hey|kumusta)\b/.test(v)) { add("Hi! Ask me about our research, team, publications, or news, and I'll point you to the right place.", "bot"); return; }
-    if (v.indexOf("contact")>=0 || v.indexOf("email")>=0 || v.indexOf("reach")>=0) {
+
+    if (/\b(hi|hello|hey|kumusta|hiya)\b/.test(v)) {
+      add("Hi! Ask me about our team, research, publications, or news, and I&rsquo;ll point you to the right place.", "bot"); return; }
+    if (/\b(contact|email|e-mail|reach|phone|address)\b/.test(v)) {
       add('You can reach the lab at <a href="mailto:datolentino@sonnet.ucla.edu">datolentino@sonnet.ucla.edu</a>, or use the <a href="'+base+'contact.html">Contact page</a>.', "bot"); return; }
-    if (v.indexOf("join")>=0 || v.indexOf("position")>=0 || v.indexOf("apply")>=0 || v.indexOf("volunteer")>=0) {
-      add('We welcome students, collaborators, and community partners. Reach out via the <a href="'+base+'contact.html">Contact page</a>.', "bot"); return; }
-    var hits = search(v);
-    if (!hits.length) { add("I couldn&rsquo;t find anything on that. Try keywords like &ldquo;diabetes,&rdquo; &ldquo;colonial mentality,&rdquo; &ldquo;team,&rdquo; or &ldquo;publications.&rdquo;", "bot"); return; }
-    var html = "Here&rsquo;s what I found:";
+    if (/\b(join|apply|position|positions|opening|openings|volunteer|hiring|collaborat)\b/.test(v)) {
+      add('We welcome students, collaborators, and community partners. Reach out through the <a href="'+base+'contact.html">Contact page</a>.', "bot"); return; }
+
+    // Detect what KIND of thing is being asked about
+    var intent = null, lead = "Here&rsquo;s what I found:";
+    if (/\b(member|members|team|teams|people|who|student|students|staff|faculty|researcher|researchers|scientist|scientists|mentee|mentees|leadership|colleague|colleagues)\b/.test(v)) {
+      intent = "Team"; lead = "Here are our team members:";
+    } else if (/\b(publication|publications|paper|papers|article|articles|study|studies|research|published|journal|finding|findings)\b/.test(v)) {
+      intent = "Publication"; lead = "Here are some of our publications:";
+    } else if (/\b(news|latest|recent|update|updates|event|events|conference|conferences|defense|defence|defended|graduate|graduated|graduation|award|awards|happening)\b/.test(v)) {
+      intent = "Lab News"; lead = "Here&rsquo;s some recent lab news:";
+    } else if (/\b(project|projects|grant|grants|funding|ongoing)\b/.test(v)) {
+      intent = "Project"; lead = "Here are our projects:";
+    }
+
+    var terms = v.replace(/[^a-z0-9\s]/g, " ").split(/\s+/).filter(function(w){ return w.length > 2 && STOP.indexOf(w) < 0; });
+
+    var hits;
+    if (intent) {
+      var pool = index.filter(function(it){ return it.type === intent; });
+      hits = score(pool, terms);
+      if (hits.length) { lead = "Here&rsquo;s what I found:"; }
+      else { hits = pool.map(function(it){ return { it: it }; }); }  // representative list
+    } else {
+      hits = score(index, terms);
+    }
+
+    hits = hits.slice(0, intent === "Team" ? 25 : 6);
+    if (!hits.length) {
+      add("I couldn&rsquo;t find anything on that. Try asking about our <strong>team</strong>, <strong>publications</strong>, <strong>projects</strong>, or <strong>news</strong>, or use keywords like &ldquo;diabetes&rdquo; or &ldquo;colonial mentality.&rdquo;", "bot"); return; }
+
+    var html = lead;
     hits.forEach(function(x){ var it=x.it;
       html += '<a class="ask-hit" href="'+base+it.url+'"><span class="ask-hit-type">'+it.type+'</span>'+esc(it.title)+'</a>';
     });
