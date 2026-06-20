@@ -350,3 +350,14 @@ h3 { font-size: 1.2rem; margin: 0 0 .3em; }
 .kt p { color: var(--muted); font-size: .92rem; margin: 0; }
 
 @media (max-width: 760px) { .glance, .keythemes { grid-template-columns: 1fr; } .art-split { grid-template-columns: 1fr; } }
+
+/* ---------- Search ---------- */
+.search-input { width: 100%; padding: 14px 16px; font: inherit; font-size: 1.1rem; border: 2px solid var(--line); border-radius: 12px; background: #fff; margin-top: 8px; }
+.search-input:focus { outline: none; border-color: var(--ucla-blue); }
+.search-results { margin-top: 20px; display: grid; gap: 10px; }
+.search-hint { color: var(--muted); }
+.search-hit { display: block; text-decoration: none; background: var(--bg); border: 1px solid var(--line); border-left: 4px solid var(--ucla-blue); border-radius: 10px; padding: 12px 16px; }
+.search-hit:hover { background: var(--bg-soft); }
+.search-type { display: inline-block; font-size: .7rem; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; color: var(--ucla-blue); }
+.search-title { display: block; font-weight: 700; color: var(--ucla-darker); margin: 2px 0; }
+.search-snip { display: block; color: var(--muted); font-size: .9rem; }

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Search | TenJ Lab</title>
+  <meta name="description" content="Search the TenJ Lab website." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" type="image/svg+xml" href="images/emblem.svg" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="index.html">
+        <img class="brand__mark" src="images/emblem.svg" alt="TenJ Lab logo" />
+        <span><span class="brand__name">TenJ Lab</span></span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="index.html">About</a></li><li><a href="team.html">Team</a></li>
+        <li><a href="news.html">Lab News</a></li><li><a href="publications.html">Publications</a></li>
+        <li><a href="projects.html">Projects</a></li><li><a href="contact.html">Contact</a></li>
+      <li><a href="search.html">Search</a></li></ul>
+    </nav>
+  </header>
+  <section class="section">
+    <div class="container" style="max-width: 760px;">
+      <h1>Search</h1>
+      <p class="lead">Search the lab&rsquo;s pages, news, publications, team, and projects.</p>
+      <input id="q" class="search-input" type="search" placeholder="Type to search..." autofocus aria-label="Search the site" />
+      <div id="results" class="search-results"><p class="search-hint">Start typing to search the site.</p></div>
+    </div>
+  </section>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div><h4>TenJ Lab</h4><p>UCLA School of Nursing.<br />Nursing science &amp; informatics for diabetes health equity.</p></div>
+        <div><h4>Explore</h4><ul>
+          <li><a href="index.html">About</a></li><li><a href="team.html">Team</a></li><li><a href="news.html">Lab News</a></li>
+          <li><a href="publications.html">Publications</a></li><li><a href="projects.html">Projects</a></li><li><a href="contact.html">Contact</a></li>
+        </ul></div>
+        <div><h4>Connect</h4><ul>
+          <li><a href="mailto:datolentino@sonnet.ucla.edu">datolentino@sonnet.ucla.edu</a></li>
+          <li><a href="https://www.linkedin.com/in/atolen/">LinkedIn</a></li>
+          <li><a href="https://www.instagram.com/tenjlab">Instagram @tenjlab</a></li>
+        </ul></div>
+      </div>
+      <div class="footer-bottom">&copy; <span id="year">2026</span> TenJ Lab, UCLA School of Nursing. All rights reserved.</div>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <script>
+    (function () {
+      var q = document.getElementById("q"), box = document.getElementById("results"), index = null, ready = false;
+      function esc(s){ return s.replace(/[&<>]/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;"}[c]; }); }
+      fetch("search-index.json").then(function(r){return r.json();}).then(function(d){ index=d; ready=true; run(); })
+        .catch(function(){ box.innerHTML = "<p class=\"search-hint\">Search is unavailable right now.</p>"; });
+      function run(){
+        if(!ready) return;
+        var v = q.value.trim().toLowerCase();
+        if(v.length < 2){ box.innerHTML = "<p class=\"search-hint\">Start typing to search the site.</p>"; return; }
+        var terms = v.split(/\s+/);
+        var hits = index.map(function(it){
+          var t = it.title.toLowerCase(), hay = (it.title + " " + it.text).toLowerCase(), s = 0;
+          terms.forEach(function(w){ if(t.indexOf(w) >= 0) s += 3; if(hay.indexOf(w) >= 0) s += 1; });
+          return { it: it, s: s };
+        }).filter(function(x){ return x.s > 0; }).sort(function(a,b){ return b.s - a.s; }).slice(0, 20);
+        if(!hits.length){ box.innerHTML = "<p class=\"search-hint\">No results for &ldquo;" + esc(q.value) + "&rdquo;.</p>"; return; }
+        box.innerHTML = hits.map(function(x){ var it = x.it;
+          return '<a class="search-hit" href="' + it.url + '"><span class="search-type">' + it.type + '</span><span class="search-title">' + esc(it.title) + '</span><span class="search-snip">' + esc(it.text.slice(0,150)) + '</span></a>';
+        }).join("");
+      }
+      q.addEventListener("input", run);
+      var p = new URLSearchParams(location.search).get("q"); if(p){ q.value = p; }
+    })();
+  </script>
+</body>
+</html>
