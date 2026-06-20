@@ -146,7 +146,7 @@
   <section class="section">
     <div class="container">
       <h2>Latest news</h2>
-      <div class="npv">
+      <div class="npv" id="latest-news">
         <a href="news.html">
           <img src="images/labnews/lisa-grad2026.jpeg" alt="" />
           <div class="body"><div class="d">June 13, 2026</div><h3>Class of 2026: celebrating Dr. Diaz and Dr. Fontejon</h3></div>
@@ -192,6 +192,33 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script>
+    /* Auto-populate "Latest news" with the 3 most recent posts from news.html */
+    (function () {
+      var box = document.getElementById("latest-news");
+      if (!box) return;
+      fetch("news.html").then(function (r) { return r.text(); }).then(function (html) {
+        var doc = new DOMParser().parseFromString(html, "text/html");
+        var arts = doc.querySelectorAll("article.news-item");
+        if (!arts.length) return;
+        var out = "";
+        for (var i = 0; i < Math.min(3, arts.length); i++) {
+          var a = arts[i];
+          var dateEl = a.querySelector(".news-item__date");
+          var titleEl = a.querySelector("h2");
+          var img = a.querySelector("img");
+          var date = dateEl ? dateEl.textContent : "";
+          var title = titleEl ? titleEl.textContent : "";
+          var src = img ? img.getAttribute("src") : "";
+          out += '<a href="news.html">' +
+                 (src ? '<img src="' + src + '" alt="" />' : "") +
+                 '<div class="body"><div class="d">' + date + '</div><h3>' + title + '</h3></div></a>';
+        }
+        box.innerHTML = out;
+      }).catch(function () { /* keep the static fallback cards */ });
+    })();
+  </script>
+
   <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>
