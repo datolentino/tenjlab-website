@@ -167,8 +167,8 @@ h3 { font-size: 1.2rem; margin: 0 0 .3em; }
 .pub-legend { display: flex; align-items: center; gap: 6px; color: var(--muted); font-size: .9rem; margin-top: 6px; }
 .pub-legend .pub__dx { margin-right: 0; }
 .pub__title { font-weight: 700; color: var(--ucla-darker); }
-.pub__more-link { display: inline-block; margin-top: 10px; font-weight: 700; font-size: .82rem; color: var(--ucla-blue); text-decoration: none; }
-.pub__more-link:hover { text-decoration: underline; }
+.pub__more-link { display: inline-block; margin-top: 12px; font-weight: 700; font-size: .85rem; color: #fff; background: var(--ucla-blue); padding: 8px 16px; border-radius: 999px; text-decoration: none; }
+.pub__more-link:hover { background: var(--ucla-darker); }
 .pub__meta  { color: var(--muted); font-size: .92rem; }
 .pub__authors { font-size: .92rem; }
 .pub__visual { margin: 10px 0 0; }
@@ -320,7 +320,8 @@ h3 { font-size: 1.2rem; margin: 0 0 .3em; }
 .art-hero .eyebrow { color: var(--ucla-gold); font-weight: 700; letter-spacing: .1em; text-transform: uppercase; font-size: .76rem; margin: 0 0 12px; }
 .art-hero h1 { color: #fff; font-size: clamp(1.7rem, 3.6vw, 2.6rem); margin: 0 0 12px; max-width: 880px; }
 .art-hero .authors { color: rgba(255,255,255,.9); font-size: 1rem; margin: 0 0 14px; }
-.art-back { color: var(--ucla-gold); text-decoration: none; font-weight: 700; }
+.art-back { color: #fff; text-decoration: none; font-weight: 700; opacity: .9; }
+.art-back:hover { text-decoration: underline; opacity: 1; }
 .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 4px 0 20px; }
 .chip { background: rgba(255,255,255,.16); color: #fff; border-radius: 999px; padding: 5px 13px; font-size: .8rem; font-weight: 600; }
 
