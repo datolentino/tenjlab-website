@@ -190,6 +190,13 @@ h3 { font-size: 1.2rem; margin: 0 0 .3em; }
   border-radius: 8px; padding: 11px 14px;
 }
 
+
+.year-nav { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 14px 0 4px; font-size: .9rem; color: var(--muted); }
+.year-nav span { font-weight: 600; }
+.year-nav a { text-decoration: none; font-weight: 700; color: var(--ucla-blue); border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px; }
+.year-nav a:hover { background: var(--bg-soft); }
+.news-year { font-family: "Bricolage Grotesque", "Inter", sans-serif; color: var(--ucla-darker); font-size: 1.6rem; margin: 40px 0 14px; padding-bottom: 6px; border-bottom: 2px solid var(--ucla-gold); scroll-margin-top: 90px; }
+
 /* ---------- News ---------- */
 .news-item { border-bottom: 1px solid var(--line); padding: 28px 0; }
 .news-item:last-child { border-bottom: 0; }
