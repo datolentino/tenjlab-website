@@ -157,14 +157,9 @@ h3 { font-size: 1.2rem; margin: 0 0 .3em; }
 /* ---------- Publications ---------- */
 .pub-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
 .pub {
-  --accent: var(--ucla-blue);
-  background: var(--bg); border: 1px solid var(--line); border-left: 4px solid var(--accent);
+  background: var(--bg); border: 1px solid var(--line);
   border-radius: 10px; padding: 15px 20px;
 }
-/* Uniform side color per section (no per-item alternation) */
-.pub-list--blue .pub { --accent: var(--ucla-blue); }
-.pub-list--gold .pub { --accent: #C99700; }  /* deep gold (legible) */
-.pub-list--navy .pub { --accent: var(--ucla-darker); }
 .pub__dx { width: 20px; height: 20px; vertical-align: -4px; margin-right: 5px; }
 .pub-legend { display: flex; align-items: center; gap: 6px; color: var(--muted); font-size: .9rem; margin-top: 6px; }
 .pub-legend .pub__dx { margin-right: 0; }
