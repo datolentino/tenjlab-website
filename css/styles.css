@@ -314,13 +314,14 @@ h3 { font-size: 1.2rem; margin: 0 0 .3em; }
   .nav-toggle { display: block; }
   .nav-links {
     display: none; position: absolute; top: 100%; left: 0; right: 0;
-    flex-direction: column; align-items: stretch; gap: 2px;
-    background: #fff; border-bottom: 1px solid var(--line); padding: 8px;
+    flex-direction: column; align-items: stretch; gap: 0;
+    background: #fff; border-bottom: 1px solid var(--line); padding: 0;
     box-shadow: 0 12px 26px rgba(0, 59, 92, 0.12);
   }
   .nav-links.open { display: flex; }
   .nav-links li { width: 100%; }
-  .nav-links a { display: block; width: 100%; padding: 15px 14px; border-radius: 8px; font-size: 1.05rem; }
+  .nav-links li + li a { border-top: 1px solid var(--line); }
+  .nav-links a { display: block; width: 100%; padding: 11px 24px; border-radius: 0; font-size: .98rem; font-weight: 600; }
   .nav-links a:hover, .nav-links a:active { background: var(--bg-soft); color: var(--ucla-darker); }
   .grid--2, .grid--3, .grid--4 { grid-template-columns: 1fr; }
   .section { padding: 48px 0; }
