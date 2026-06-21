@@ -4,7 +4,10 @@ document.addEventListener("DOMContentLoaded", function () {
   var links = document.querySelector(".nav-links");
   if (toggle && links) {
     toggle.addEventListener("click", function () {
-      links.classList.toggle("open");
+      var open = links.classList.toggle("open");
+      toggle.innerHTML = open ? "&times;" : "&#9776;";
+      toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
     });
   }
 });
