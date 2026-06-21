@@ -159,7 +159,10 @@ h3 { font-size: 1.2rem; margin: 0 0 .3em; }
 .pub {
   background: var(--bg); border: 1px solid var(--line);
   border-radius: 10px; padding: 15px 20px;
+  box-shadow: var(--shadow);
+  transition: transform .14s ease, box-shadow .14s ease;
 }
+.pub:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(0, 59, 92, 0.14); }
 .pub__dx { width: 20px; height: 20px; vertical-align: -4px; margin-right: 5px; }
 .pub-legend { display: flex; align-items: center; gap: 6px; color: var(--muted); font-size: .9rem; margin-top: 6px; }
 .pub-legend .pub__dx { margin-right: 0; }
