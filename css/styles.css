@@ -410,6 +410,15 @@ h3 { font-size: 1.2rem; margin: 0 0 .3em; }
 .search-title { display: block; font-weight: 700; color: var(--ucla-darker); margin: 2px 0; }
 .search-snip { display: block; color: var(--muted); font-size: .9rem; }
 
+/* ---------- Poster figure (detail pages) ---------- */
+.poster-figure { margin: 18px 0 0; }
+.poster-figure img {
+  width: 100%; height: auto; border: 1px solid var(--line); border-radius: 14px;
+  box-shadow: var(--shadow); background: #fff;
+}
+.poster-figure a { display: block; }
+.poster-figure figcaption { color: var(--muted); font-size: .9rem; margin-top: 10px; text-align: center; }
+
 /* ---------- Media / In the media ---------- */
 .media-list { list-style: none; margin: 18px 0 0; padding: 0; display: grid; gap: 18px; }
 .media-item {

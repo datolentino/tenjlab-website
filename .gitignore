@@ -3,3 +3,5 @@
 
 # Source article PDFs (kept locally, not published)
 publications/*.pdf
+# Source poster files (a clean copy is published under posters/<slug>.pdf)
+publications/Posters/
