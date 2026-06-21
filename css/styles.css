@@ -109,7 +109,7 @@ h3 { font-size: 1.2rem; margin: 0 0 .3em; }
 }
 
 /* ---------- People ---------- */
-.person { text-align: center; }
+.person { text-align: center; scroll-margin-top: 90px; }
 .person__photo {
   width: 120px; height: 120px; border-radius: 50%; margin: 0 auto 14px;
   object-fit: cover; object-position: center 22%; background: var(--bg-soft);
