@@ -3,11 +3,26 @@ document.addEventListener("DOMContentLoaded", function () {
   var toggle = document.querySelector(".nav-toggle");
   var links = document.querySelector(".nav-links");
   if (toggle && links) {
-    toggle.addEventListener("click", function () {
-      var open = links.classList.toggle("open");
+    function setMenu(open) {
+      links.classList.toggle("open", open);
+      document.body.classList.toggle("nav-open", open);
       toggle.innerHTML = open ? "&times;" : "&#9776;";
       toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
       toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    }
+    toggle.addEventListener("click", function (e) {
+      e.stopPropagation();
+      setMenu(!links.classList.contains("open"));
+    });
+    // Tap outside the menu (e.g. the blurred backdrop) to close.
+    document.addEventListener("click", function (e) {
+      if (links.classList.contains("open") && !links.contains(e.target) && e.target !== toggle) {
+        setMenu(false);
+      }
+    });
+    // Escape closes.
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && links.classList.contains("open")) setMenu(false);
     });
   }
 });
