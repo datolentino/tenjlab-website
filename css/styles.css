@@ -476,3 +476,25 @@ h3 { font-size: 1.2rem; margin: 0 0 .3em; }
 
 .footer-built { display: block; margin-top: 8px; font-size: .8rem; color: rgba(255,255,255,.5); }
 .footer-built a { color: rgba(255,255,255,.75); text-decoration: underline; }
+
+/* ---------- Research: per-year horizontal rails ---------- */
+.year-block { margin-top: 24px; }
+.year-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
+.year-label { font-family: "Bricolage Grotesque", "Inter", sans-serif; font-weight: 800; color: var(--ucla-darker); font-size: 1.3rem; margin: 0; }
+.rail-btns { display: flex; gap: 8px; }
+.rail-btn { width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--line); background: #fff; color: var(--ucla-darker); font-size: 1.3rem; line-height: 1; cursor: pointer; display: grid; place-items: center; transition: background .12s ease, opacity .12s ease, color .12s ease; }
+.rail-btn:hover { background: var(--ucla-darker); color: #fff; }
+.rail-btn[disabled] { opacity: .3; cursor: default; background: #fff; color: var(--ucla-darker); }
+.rail { display: flex; gap: 18px; overflow-x: auto; scroll-snap-type: x proximity; scroll-behavior: smooth; padding: 4px 2px 16px; }
+.rail::-webkit-scrollbar { height: 8px; }
+.rail::-webkit-scrollbar-thumb { background: var(--line); border-radius: 999px; }
+.rail::-webkit-scrollbar-track { background: transparent; }
+.rcard { flex: 0 0 300px; scroll-snap-align: start; display: flex; flex-direction: column; background: var(--bg); border: 1px solid var(--line); border-radius: 14px; padding: 18px; box-shadow: var(--shadow); transition: transform .14s ease, box-shadow .14s ease; }
+.rcard:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(0, 59, 92, .14); }
+.rcard__title { font-weight: 700; color: var(--ucla-darker); line-height: 1.32; margin-bottom: 8px; }
+.rcard__authors { font-size: .85rem; color: var(--ink); margin-bottom: 6px; }
+.rcard__meta { font-size: .85rem; color: var(--muted); margin-bottom: 10px; }
+.rcard__plain { font-size: .9rem; color: var(--ink); margin: 0 0 14px; display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical; overflow: hidden; }
+.rcard__link { margin-top: auto; align-self: flex-start; font-weight: 700; font-size: .82rem; color: #fff; background: var(--ucla-blue); padding: 8px 15px; border-radius: 999px; text-decoration: none; }
+.rcard__link:hover { background: var(--ucla-darker); }
+@media (max-width: 640px) { .rcard { flex-basis: 80vw; } }

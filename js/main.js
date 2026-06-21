@@ -191,3 +191,30 @@ document.addEventListener("DOMContentLoaded", function () {
     setTimeout(function(){ handleAction(act); }, 120);
   });
 })();
+
+// Research page: horizontal year rails (scroll buttons + auto-hide/disable)
+(function () {
+  var rails = document.querySelectorAll(".rail");
+  if (!rails.length) return;
+  document.querySelectorAll(".rail-btn").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var rail = b.closest(".year-block").querySelector(".rail");
+      var dir = b.getAttribute("data-dir") === "1" ? 1 : -1;
+      rail.scrollBy({ left: dir * Math.max(280, rail.clientWidth * 0.85), behavior: "smooth" });
+    });
+  });
+  function update() {
+    rails.forEach(function (rail) {
+      var btns = rail.closest(".year-block").querySelector(".rail-btns");
+      if (!btns) return;
+      if (rail.scrollWidth <= rail.clientWidth + 4) { btns.style.display = "none"; return; }
+      btns.style.display = "flex";
+      var l = btns.querySelector('[data-dir="-1"]'), r = btns.querySelector('[data-dir="1"]');
+      if (l) l.disabled = rail.scrollLeft <= 2;
+      if (r) r.disabled = rail.scrollLeft >= rail.scrollWidth - rail.clientWidth - 2;
+    });
+  }
+  rails.forEach(function (rail) { rail.addEventListener("scroll", update, { passive: true }); });
+  window.addEventListener("resize", update);
+  update();
+})();
