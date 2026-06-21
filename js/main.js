@@ -113,9 +113,16 @@ document.addEventListener("DOMContentLoaded", function () {
         ["Asian American diabetes", "q:asian american"],
         ["Technology & wearables", "q:technology wearable digital informatics"],
         ["Social media & education", "q:tiktok social media education self-management"],
+        ["📑 Posters & preliminary findings", "posters"],
         ["See all publications", "link:publications.html"],
         BACK
       ]), "bot"); return;
+    }
+    if (act === "posters") {
+      var pp = index.filter(function(it){ return it.url.indexOf("posters/") === 0; });
+      var ph = "Here are our conference posters, each with a plain-language summary:";
+      pp.forEach(function(it){ ph += hitLink(it); });
+      add(ph + chipRow([["📄 Other publications", "pubs"], BACK]), "bot"); return;
     }
     if (act === "news") { listType("Lab News", "Here&rsquo;s the latest from the lab:", [["See all lab news", "link:news.html"], BACK], 5); return; }
     if (act === "media") { listType("Media", "Here&rsquo;s where the lab&rsquo;s work has been featured:", [["📄 Publications", "pubs"], BACK]); return; }
@@ -134,6 +141,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (/\b(hi|hello|hey|kumusta|hiya)\b/.test(v)) { botMenu("Hi! What would you like to know?"); return; }
     if (/\b(contact|email|e-mail|reach|phone|address)\b/.test(v)) { handleAction("contact"); return; }
     if (/\b(join|apply|position|positions|opening|openings|volunteer|hiring|collaborat)\b/.test(v)) { handleAction("involved"); return; }
+    if (/\bposters?\b/.test(v)) { handleAction("posters"); return; }
 
     var intent = null;
     if (/\b(media|press|interview|interviews|podcast|featured|feature|magazine|coverage|appearance|appearances)\b/.test(v)) intent = "Media";
@@ -163,7 +171,7 @@ document.addEventListener("DOMContentLoaded", function () {
     panel.classList.add("open"); launch.classList.add("hide");
     if (!opened) {
       opened = true;
-      if (!index) fetch(base+"search-index.json").then(function(r){return r.json();}).then(function(d){ index=d; }).catch(function(){});
+      if (!index) fetch(base+"search-index.json", { cache: "no-cache" }).then(function(r){return r.json();}).then(function(d){ index=d; }).catch(function(){});
       botMenu("Hi! I&rsquo;m the TenJ Lab assistant. What would you like to know? Tap an option below.");
     }
   }

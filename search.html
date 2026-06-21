@@ -56,7 +56,7 @@
     (function () {
       var q = document.getElementById("q"), box = document.getElementById("results"), index = null, ready = false;
       function esc(s){ return s.replace(/[&<>]/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;"}[c]; }); }
-      fetch("search-index.json").then(function(r){return r.json();}).then(function(d){ index=d; ready=true; run(); })
+      fetch("search-index.json", { cache: "no-cache" }).then(function(r){return r.json();}).then(function(d){ index=d; ready=true; run(); })
         .catch(function(){ box.innerHTML = "<p class=\"search-hint\">Search is unavailable right now.</p>"; });
       function run(){
         if(!ready) return;
