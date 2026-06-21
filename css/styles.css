@@ -213,7 +213,7 @@ h3 { font-size: 1.2rem; margin: 0 0 .3em; }
 .news-related a { font-weight: 600; }
 
 /* ---------- News ---------- */
-.news-item { border-bottom: 1px solid var(--line); padding: 28px 0; }
+.news-item { border-bottom: 1px solid var(--line); padding: 28px 0; scroll-margin-top: 90px; }
 .news-item:last-child { border-bottom: 0; }
 .news-item__date { color: var(--ucla-blue); font-weight: 700; font-size: .85rem; text-transform: uppercase; letter-spacing: .08em; }
 
