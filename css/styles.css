@@ -223,7 +223,7 @@ h3 { font-size: 1.2rem; margin: 0 0 .3em; }
 .news-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 18px; }
 .news-gallery figure { margin: 0; }
 .news-gallery img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 10px; border: 1px solid var(--line); display: block; }
-.news-gallery figcaption { font-size: .82rem; color: var(--muted); margin-top: 6px; line-height: 1.4; }
+.news-gallery figcaption, .news-photo figcaption { font-size: .82rem; color: var(--muted); margin-top: 6px; line-height: 1.4; }
 @media (max-width: 640px) { .news-gallery { grid-template-columns: 1fr; } }
 
 /* ---------- Contact form ---------- */
