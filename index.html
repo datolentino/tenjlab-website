@@ -123,7 +123,7 @@
           <div class="body"><div class="d">June 13, 2026</div><h3>Class of 2026: celebrating Dr. Diaz and Dr. Fontejon</h3></div>
         </a>
         <a href="news.html">
-          <img src="images/labnews/michael-ucla.jpeg" alt="" />
+          <img src="images/labnews/paulboy-uclacon2026.jpeg" alt="" />
           <div class="body"><div class="d">May 29, 2026</div><h3>Lab research at the 2026 UCLA Nursing Science Conference</h3></div>
         </a>
         <a href="news.html">
@@ -177,7 +177,7 @@
           var a = arts[i];
           var dateEl = a.querySelector(".news-item__date");
           var titleEl = a.querySelector("h2");
-          var img = a.querySelector("img");
+          var img = a.querySelector("img[data-news-card]") || a.querySelector("img");
           var date = dateEl ? dateEl.textContent : "";
           var title = titleEl ? titleEl.textContent : "";
           var src = img ? img.getAttribute("src") : "";
