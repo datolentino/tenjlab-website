@@ -7,6 +7,7 @@
   --ucla-blue:   #2774AE;
   --ucla-darker: #003B5C;
   --ucla-gold:   #FFD100;
+  --ph-red:      #CE1126;
   --ink:         #1c2733;
   --muted:       #5b6770;
   --line:        #e3e8ee;
@@ -51,6 +52,10 @@ h3 { font-size: 1.2rem; margin: 0 0 .3em; }
   background: rgba(255, 255, 255, 0.92);
   backdrop-filter: saturate(180%) blur(8px);
   border-bottom: 1px solid var(--line);
+}
+.site-header::before {
+  content: ""; display: block; height: 3px;
+  background: linear-gradient(90deg, var(--ucla-blue) 0 33.33%, var(--ph-red) 33.33% 66.66%, var(--ucla-gold) 66.66% 100%);
 }
 .nav {
   display: flex; align-items: center; justify-content: space-between;
@@ -328,7 +333,7 @@ h3 { font-size: 1.2rem; margin: 0 0 .3em; }
 .phero__eyebrow { color: var(--ucla-blue); font-weight: 800; letter-spacing: .14em; text-transform: uppercase; font-size: .8rem; margin: 0 0 14px; }
 .phero__title { font-family: "Bricolage Grotesque","Inter",sans-serif; font-weight: 800; color: var(--ucla-darker); line-height: 1.04; letter-spacing: -0.02em; font-size: clamp(2.4rem, 5.2vw, 4.1rem); margin: 0 0 18px; }
 .phero__title .hl { color: #C99700; }
-.phero__title .hl-b { color: var(--ucla-blue); }
+.phero__title .hl-b { color: var(--ph-red); }
 .phero__lead { font-size: 1.18rem; color: var(--muted); max-width: 540px; margin: 0 0 26px; }
 .phero__cta .btn--primary { background: var(--ucla-gold); color: var(--ucla-darker); }
 .phero__cta .btn--dark { background: var(--ucla-darker); color: #fff; }
