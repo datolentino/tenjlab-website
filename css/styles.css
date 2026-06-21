@@ -429,7 +429,8 @@ h3 { font-size: 1.2rem; margin: 0 0 .3em; }
   border-radius: 14px; padding: 20px 22px; box-shadow: var(--shadow);
   transition: transform .14s ease, box-shadow .14s ease;
 }
-.media-item:nth-child(even) { border-left-color: var(--ucla-gold); }
+.media-list--blue .media-item { border-left-color: var(--ucla-blue); }
+.media-list--gold .media-item { border-left-color: var(--ucla-gold); }
 .media-item:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(0, 59, 92, 0.14); }
 .media-item__head { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-bottom: 8px; }
 .media-tag {
