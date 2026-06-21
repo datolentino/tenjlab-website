@@ -204,6 +204,8 @@ h3 { font-size: 1.2rem; margin: 0 0 .3em; }
 .year-nav a:hover, .section-nav a:hover { background: var(--bg-soft); }
 .section-nav { margin: 18px 0 8px; }
 .news-year { font-family: "Bricolage Grotesque", "Inter", sans-serif; color: var(--ucla-darker); font-size: 1.6rem; margin: 40px 0 14px; padding-bottom: 6px; border-bottom: 2px solid var(--ucla-gold); scroll-margin-top: 90px; }
+.news-related { margin: 14px 0 0; font-size: .9rem; color: var(--muted); }
+.news-related a { font-weight: 600; }
 
 /* ---------- News ---------- */
 .news-item { border-bottom: 1px solid var(--line); padding: 28px 0; }
