@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   var MENU = [
     ["👥 Meet the team", "team"],
-    ["📄 Browse publications", "pubs"],
+    ["📄 Browse research", "pubs"],
     ["📑 Posters", "posters"],
     ["📰 Latest news", "news"],
     ["📺 In the media", "media"],
@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function handleAction(act){
     if (!index && act !== "contact" && act !== "involved") { add("One moment, I&rsquo;m still loading. Please tap again in a second.", "bot"); return; }
     if (act === "menu") { botMenu("What would you like to know?"); return; }
-    if (act === "team") { listType("Team", "Here are our team members. Tap a name to read their bio:", [["📄 Publications", "pubs"], ["🔬 Projects", "projects"], BACK]); return; }
+    if (act === "team") { listType("Team", "Here are our team members. Tap a name to read their bio:", [["📄 Research", "pubs"], ["🔬 Projects", "projects"], BACK]); return; }
     if (act === "pubs") {
       add("Which topic interests you?" + chipRow([
         ["Filipino American health", "q:filipino"],
@@ -115,7 +115,7 @@ document.addEventListener("DOMContentLoaded", function () {
         ["Technology & wearables", "q:technology wearable digital informatics"],
         ["Social media & education", "q:tiktok social media education self-management"],
         ["📑 Posters & preliminary findings", "posters"],
-        ["See all publications", "link:publications.html"],
+        ["See all research", "link:publications.html"],
         BACK
       ]), "bot"); return;
     }
@@ -123,11 +123,11 @@ document.addEventListener("DOMContentLoaded", function () {
       var pp = index.filter(function(it){ return it.url.indexOf("posters/") === 0; });
       var ph = "Here are our conference posters, each with a plain-language summary:";
       pp.forEach(function(it){ ph += hitLink(it); });
-      add(ph + chipRow([["📄 Other publications", "pubs"], BACK]), "bot"); return;
+      add(ph + chipRow([["📄 Other research", "pubs"], BACK]), "bot"); return;
     }
     if (act === "news") { listType("Lab News", "Here&rsquo;s the latest from the lab:", [["See all lab news", "link:news.html"], BACK], 5); return; }
-    if (act === "media") { listType("Media", "Here&rsquo;s where the lab&rsquo;s work has been featured:", [["📄 Publications", "pubs"], BACK]); return; }
-    if (act === "projects") { listType("Project", "Here are our current projects:", [["📄 Related publications", "pubs"], BACK]); return; }
+    if (act === "media") { listType("Media", "Here&rsquo;s where the lab&rsquo;s work has been featured:", [["📄 Research", "pubs"], BACK]); return; }
+    if (act === "projects") { listType("Project", "Here are our current projects:", [["📄 Related research", "pubs"], BACK]); return; }
     if (act === "involved") { add('We welcome students, collaborators, and community partners who share our commitment to health equity. The best way to start is to reach out.' + chipRow([["✉️ Contact us", "contact"], ["👥 Meet the team", "team"], BACK]), "bot"); return; }
     if (act === "contact") { add('You can reach the lab at <a href="mailto:datolentino@sonnet.ucla.edu">datolentino@sonnet.ucla.edu</a>, or use the <a href="'+base+'contact.html">Contact page</a>.' + chipRow([["🤝 Get involved", "involved"], BACK]), "bot"); return; }
     if (act.indexOf("q:") === 0) { doSearch(act.slice(2), "Publication", [["Other topics", "pubs"], BACK]); return; }
