@@ -56,6 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var MENU = [
     ["👥 Meet the team", "team"],
     ["📄 Browse publications", "pubs"],
+    ["📑 Posters", "posters"],
     ["📰 Latest news", "news"],
     ["📺 In the media", "media"],
     ["🔬 Our projects", "projects"],
