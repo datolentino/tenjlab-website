@@ -168,9 +168,9 @@ h3 { font-size: 1.2rem; margin: 0 0 .3em; }
   transition: transform .14s ease, box-shadow .14s ease;
 }
 .pub:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(0, 59, 92, 0.14); }
-.pub__dx { width: 20px; height: 20px; vertical-align: -4px; margin-right: 5px; }
+.pub__dx { width: 20px; height: 20px; vertical-align: -4px; margin-left: 4px; }
 .pub-legend { display: flex; align-items: center; gap: 6px; color: var(--muted); font-size: .9rem; margin-top: 6px; }
-.pub-legend .pub__dx { margin-right: 0; }
+.pub-legend .pub__dx { margin: 0; }
 .pub__title { font-weight: 700; color: var(--ucla-darker); }
 .pub__related { margin-top: 10px; font-size: .85rem; color: var(--muted); }
 .pub__related a { font-weight: 600; }
