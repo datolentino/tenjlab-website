@@ -480,6 +480,7 @@ h3 { font-size: 1.2rem; margin: 0 0 .3em; }
 /* ---------- Research: per-year horizontal rails ---------- */
 .year-block { margin-top: 24px; }
 .year-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
+.year-head--nolabel { justify-content: flex-end; }
 .year-label { font-family: "Bricolage Grotesque", "Inter", sans-serif; font-weight: 800; color: var(--ucla-darker); font-size: 1.3rem; margin: 0; }
 .rail-btns { display: flex; gap: 8px; }
 .rail-btn { width: 36px; height: 36px; border-radius: 50%; border: 0; background: rgba(0, 0, 0, .05); color: var(--ucla-darker); font-size: 1.25rem; line-height: 1; cursor: pointer; display: grid; place-items: center; transition: background .15s ease, opacity .15s ease; }
