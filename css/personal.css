@@ -118,7 +118,7 @@
 .pp-stats { background: var(--pp-soft); color: var(--pp-ink); }
 .pp-stats__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--pp-line); border-top: 1px solid var(--pp-line); border-bottom: 1px solid var(--pp-line); }
 .pp-stat { background: var(--pp-soft); padding: 28px 22px; text-align: center; }
-.pp-stat__n { font-family: "Bricolage Grotesque","Inter",sans-serif; font-weight: 800; font-size: clamp(1.7rem, 3vw, 2.4rem); color: var(--pp-ink); line-height: 1; }
+.pp-stat__n { font-family: "Bricolage Grotesque","Inter",sans-serif; font-weight: 800; font-size: clamp(1.7rem, 3vw, 2.4rem); color: var(--pp-accent); line-height: 1; }
 .pp-stat__l { font-size: .82rem; color: var(--pp-muted); margin-top: 8px; line-height: 1.4; }
 @media (max-width: 760px) { .pp-stats__grid { grid-template-columns: repeat(2, 1fr); } }
 
