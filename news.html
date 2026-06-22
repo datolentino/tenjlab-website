@@ -939,5 +939,113 @@
 
   <script src="js/main.js"></script>
   <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <script>
+  /* Paginate the Lab News feed: 8 full posts per page, newest first on page 1.
+     Year headings are regenerated per page; "Jump to year" jumps to the right page.
+     Deep links (news.html#post-id) open on the page that holds that post. */
+  (function () {
+    var PER_PAGE = 8;
+    var articles = Array.prototype.slice.call(document.querySelectorAll("article.news-item"));
+    if (articles.length <= PER_PAGE) return;
+    var parent = articles[0].parentNode;
+    var pageCount = Math.ceil(articles.length / PER_PAGE);
+
+    // Hide the static year headers; we generate fresh ones for each page.
+    Array.prototype.slice.call(document.querySelectorAll(".news-year")).forEach(function (h) { h.style.display = "none"; });
+
+    function yearOf(a) {
+      var d = a.querySelector(".news-item__date");
+      var m = d && d.textContent.match(/\b(20\d{2})\b/);
+      return m ? m[1] : "";
+    }
+    var years = articles.map(yearOf);
+
+    var pager = document.createElement("nav");
+    pager.className = "pager";
+    pager.setAttribute("aria-label", "Lab news pages");
+    parent.appendChild(pager);
+
+    var currentPage = 1;
+
+    function firstPageOfYear(y) {
+      var idx = years.indexOf(y);
+      return idx < 0 ? 1 : Math.floor(idx / PER_PAGE) + 1;
+    }
+
+    function render(page) {
+      page = Math.max(1, Math.min(pageCount, page));
+      currentPage = page;
+      var start = (page - 1) * PER_PAGE, end = start + PER_PAGE;
+      Array.prototype.slice.call(parent.querySelectorAll(".news-year--gen")).forEach(function (n) { n.remove(); });
+      var lastYear = null;
+      articles.forEach(function (a, i) {
+        if (i >= start && i < end) {
+          a.style.display = "";
+          if (years[i] && years[i] !== lastYear) {
+            var h = document.createElement("h2");
+            h.className = "news-year news-year--gen";
+            h.textContent = years[i];
+            parent.insertBefore(h, a);
+            lastYear = years[i];
+          }
+        } else {
+          a.style.display = "none";
+        }
+      });
+      var html = '<button class="pager__btn" data-go="' + (page - 1) + '"' + (page === 1 ? " disabled" : "") + ' aria-label="Previous page">&lsaquo; Prev</button>';
+      for (var p = 1; p <= pageCount; p++) {
+        html += '<button class="pager__num' + (p === page ? ' is-active" aria-current="page"' : '"') + ' data-go="' + p + '">' + p + '</button>';
+      }
+      html += '<button class="pager__btn" data-go="' + (page + 1) + '"' + (page === pageCount ? " disabled" : "") + ' aria-label="Next page">Next &rsaquo;</button>';
+      pager.innerHTML = html;
+    }
+
+    function goToPage(p, scrollNode) {
+      render(p);
+      history.pushState({ page: currentPage }, "", "?page=" + currentPage);
+      if (scrollNode && scrollNode.scrollIntoView) { scrollNode.scrollIntoView(); }
+      else { window.scrollTo({ top: 0, behavior: "smooth" }); }
+    }
+
+    pager.addEventListener("click", function (e) {
+      var btn = e.target.closest("[data-go]");
+      if (!btn || btn.disabled) return;
+      goToPage(parseInt(btn.getAttribute("data-go"), 10));
+    });
+
+    var yearNav = document.querySelector(".year-nav");
+    if (yearNav) {
+      yearNav.addEventListener("click", function (e) {
+        var a = e.target.closest('a[href^="#y"]');
+        if (!a) return;
+        e.preventDefault();
+        var y = a.getAttribute("href").replace("#y", "");
+        render(firstPageOfYear(y));
+        history.pushState({ page: currentPage }, "", "?page=" + currentPage);
+        var gen = Array.prototype.slice.call(parent.querySelectorAll(".news-year--gen")).filter(function (h) { return h.textContent.trim() === y; })[0];
+        if (gen) gen.scrollIntoView();
+      });
+    }
+
+    window.addEventListener("popstate", function () {
+      var m = location.search.match(/[?&]page=(\d+)/);
+      render(m ? parseInt(m[1], 10) : 1);
+      window.scrollTo({ top: 0 });
+    });
+
+    // Initial page: a #post-id deep link wins, else ?page=N, else 1.
+    var initial = 1, target = null;
+    if (location.hash.length > 1) {
+      var el = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+      var ti = articles.indexOf(el);
+      if (ti >= 0) { initial = Math.floor(ti / PER_PAGE) + 1; target = el; }
+    } else {
+      var mm = location.search.match(/[?&]page=(\d+)/);
+      if (mm) initial = parseInt(mm[1], 10);
+    }
+    render(initial);
+    if (target) { setTimeout(function () { target.scrollIntoView(); }, 0); }
+  })();
+  </script>
 </body>
 </html>

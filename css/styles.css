@@ -229,6 +229,11 @@ h3 { font-size: 1.2rem; margin: 0 0 .3em; }
 .news-gallery img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 10px; border: 1px solid var(--line); display: block; }
 .news-gallery figcaption, .news-photo figcaption { font-size: .82rem; color: var(--muted); margin-top: 6px; line-height: 1.4; }
 @media (max-width: 640px) { .news-gallery { grid-template-columns: 1fr; } }
+.pager { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 6px; margin: 40px 0 4px; }
+.pager button { font: inherit; font-weight: 600; border: 1px solid var(--line); background: #fff; color: var(--ink); min-width: 42px; height: 42px; padding: 0 14px; border-radius: 10px; cursor: pointer; transition: background .12s ease, color .12s ease, border-color .12s ease; }
+.pager button:hover:not(:disabled) { border-color: var(--ucla-blue); color: var(--ucla-blue); }
+.pager button.is-active, .pager button.is-active:hover { background: var(--ucla-blue); border-color: var(--ucla-blue); color: #fff; cursor: default; }
+.pager button:disabled { opacity: .4; cursor: default; }
 
 /* ---------- Contact form ---------- */
 .form { display: grid; gap: 16px; max-width: 560px; }
