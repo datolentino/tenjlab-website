@@ -5,3 +5,23 @@
 publications/*.pdf
 # Source poster files (a clean copy is published under posters/<slug>.pdf)
 publications/Posters/
+
+# --- Safety net: never publish sensitive / personal documents ---
+# Dante's evaluations, self-statement, dossier, tenure/merit packets, CV drafts,
+# grant apps, etc. live OUTSIDE this repo. These patterns block them from being
+# committed if one is ever dropped into the repo by accident. The CV is published
+# deliberately as files/Tolentino-CV.pdf (a PDF), so PDFs are NOT blocked here.
+*.docx
+*.doc
+*.xlsx
+*.xls
+*.pptx
+*.ppt
+*.key
+*[Ee]valuation*
+*Instructor*Report*
+*[Ss]elf*[Ss]tatement*
+*[Dd]ossier*
+*[Tt]enure*
+*[Mm]erit*
+*[Bb]iosketch*
