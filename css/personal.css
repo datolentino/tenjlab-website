@@ -104,6 +104,11 @@
   background: linear-gradient(140deg, var(--pp-blue), var(--pp-red) 55%, var(--pp-gold));
   opacity: .55; filter: blur(6px);
 }
+@media (max-width: 760px) {
+  .pp-hero__inner { grid-template-columns: 1fr; gap: 36px; padding: 72px 0 80px; }
+  .pp-hero__photo { justify-self: center; }
+  .pp-hero__photo img { width: min(360px, 82vw); }
+}
 
 /* animated background blobs */
 .pp-blob { position: absolute; border-radius: 50%; filter: blur(60px); opacity: .5; z-index: 1; }
