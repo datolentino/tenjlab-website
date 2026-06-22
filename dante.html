@@ -16,6 +16,7 @@
   <!-- ===== Top nav ===== -->
   <nav class="pp-nav">
     <a class="pp-nav__brand" href="dante.html">Dante&nbsp;A.&nbsp;Tolentino<span>.</span></a>
+    <button class="pp-nav__toggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
     <div class="pp-nav__links">
       <a href="#about">About</a>
       <a href="#research">Research</a>
@@ -29,9 +30,6 @@
 
   <!-- ===== Hero ===== -->
   <header class="pp-hero">
-    <span class="pp-blob pp-blob--1"></span>
-    <span class="pp-blob pp-blob--2"></span>
-    <span class="pp-blob pp-blob--3"></span>
     <div class="pp-wrap">
       <div class="pp-hero__inner">
         <div class="pp-reveal">
@@ -88,17 +86,17 @@
       <div class="pp-kicker pp-reveal"><span class="pp-kicker__num">02</span> Research</div>
       <h2 class="pp-h2 pp-reveal">Three interconnected programs</h2>
       <div class="pp-research">
-        <article class="pp-rc pp-reveal" style="--accent:#2774AE;">
+        <article class="pp-rc pp-reveal">
           <div class="pp-rc__no">01</div>
           <h3>Health disparities in diabetes</h3>
           <p>Community-partnered, culturally grounded research on the sociocultural and structural determinants of type 2 diabetes among Filipino and Asian Americans. Rooted in Sikolohiyang Pilipino, this work pairs qualitative inquiry with spatial mapping of diabetes education programs across Los Angeles and Orange counties.</p>
         </article>
-        <article class="pp-rc pp-reveal" style="--accent:#CE1126;">
+        <article class="pp-rc pp-reveal">
           <div class="pp-rc__no">02</div>
           <h3>Biobehavioral stress mechanisms</h3>
           <p>A stress-science approach that connects discrimination, internalized oppression, and embodied inequality to metabolic health. This work pairs validated psychosocial measures with biomarkers such as allostatic load, building toward a biopsychosocial model that links structural racism with diabetes outcomes.</p>
         </article>
-        <article class="pp-rc pp-reveal" style="--accent:#C99700;">
+        <article class="pp-rc pp-reveal">
           <div class="pp-rc__no">03</div>
           <h3>Informatics and digital health</h3>
           <p>Grounded in clinical informatics and human-computer interaction, this work studies nursing workflows within the electronic health record and repositions digital health tools, including wearables and AI, through a health-equity lens.</p>
@@ -283,6 +281,18 @@
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+    /* Mobile burger menu */
+    (function () {
+      var t = document.querySelector(".pp-nav__toggle"), l = document.querySelector(".pp-nav__links");
+      if (!t || !l) return;
+      function set(open) {
+        l.classList.toggle("open", open);
+        t.innerHTML = open ? "&times;" : "&#9776;";
+        t.setAttribute("aria-expanded", open ? "true" : "false");
+      }
+      t.addEventListener("click", function () { set(!l.classList.contains("open")); });
+      l.addEventListener("click", function (e) { if (e.target.closest("a")) set(false); });
+    })();
     /* Reveal on scroll */
     (function () {
       var els = document.querySelectorAll(".pp-reveal");
