@@ -15,6 +15,9 @@
   --pp-muted:  #6e6e73;
   --pp-line:   #d2d2d7;
   --pp-soft:   #f5f5f7;
+  --pp-accent: #2774AE;   /* TenJ Lab blue: button + gradient splash */
+  --pp-grad-a: #6db3e6;   /* gradient start (sky blue) */
+  --pp-grad-b: #FFD100;   /* gradient end (gold) */
   --pp-max:    1120px;
   --pp-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
 }
@@ -49,8 +52,8 @@
 .pp-nav__links { display: flex; align-items: center; gap: 4px; }
 .pp-nav__links a { color: rgba(255,255,255,.8); text-decoration: none; font-weight: 600; font-size: .9rem; padding: 8px 12px; border-radius: 8px; transition: background .15s ease, color .15s ease; }
 .pp-nav__links a:hover { color: #fff; background: rgba(255,255,255,.1); }
-.pp-nav__cta { color: #1d1d1f !important; background: #fff; padding: 9px 16px !important; border-radius: 999px; }
-.pp-nav__cta:hover { background: #f5f5f7 !important; }
+.pp-nav__cta { color: #fff !important; background: var(--pp-accent); padding: 9px 16px !important; border-radius: 999px; }
+.pp-nav__cta:hover { background: #2f86c9 !important; }
 .pp-nav__back { color: rgba(255,255,255,.7) !important; font-size: .84rem !important; }
 .pp-nav__toggle { display: none; background: transparent; border: 0; color: #fff; font-size: 1.5rem; line-height: 1; cursor: pointer; padding: 4px 8px; }
 @media (max-width: 860px) {
@@ -79,13 +82,17 @@
   font-size: clamp(2.7rem, 6vw, 4.7rem); line-height: 1.02; letter-spacing: -.025em; margin: 0 0 14px;
   color: #fff;
 }
-.pp-hero h1 .pp-grad { color: #fff; }
+.pp-hero h1 .pp-grad {
+  background: linear-gradient(100deg, var(--pp-grad-a), var(--pp-grad-b) 70%);
+  -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent;
+}
 .pp-hero__creds { font-weight: 600; color: rgba(255,255,255,.82); font-size: 1.02rem; margin: 0 0 22px; }
 .pp-hero__creds b { color: #fff; }
 .pp-hero__lead { font-size: clamp(1.05rem, 1.6vw, 1.28rem); color: rgba(255,255,255,.9); max-width: 36ch; margin: 0 0 30px; }
 .pp-cta { display: flex; flex-wrap: wrap; gap: 12px; }
 .pp-btn { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; font-weight: 700; font-size: .95rem; padding: 13px 22px; border-radius: 999px; transition: transform .12s ease, box-shadow .12s ease, background .15s ease; }
-.pp-btn--gold { background: #fff; color: #1d1d1f; box-shadow: 0 8px 24px rgba(0,0,0,.18); }
+.pp-btn--gold { background: var(--pp-accent); color: #fff; box-shadow: 0 8px 24px rgba(39,116,174,.28); }
+.pp-btn--gold:hover { background: #2f86c9; }
 .pp-btn--ghost { background: rgba(255,255,255,.06); color: #fff; border: 1px solid rgba(255,255,255,.28); }
 .pp-btn:hover { transform: translateY(-2px); }
 .pp-btn--ghost:hover { background: rgba(255,255,255,.16); }
@@ -178,7 +185,10 @@
 /* ---------- Contact / footer ---------- */
 .pp-contact { background: var(--pp-navy); color: #fff; text-align: center; padding: 100px 0; }
 .pp-contact h2 { font-family: "Bricolage Grotesque","Inter",sans-serif; font-weight: 800; font-size: clamp(2rem, 4.5vw, 3.2rem); letter-spacing: -.02em; margin: 0 0 16px; color: #fff; }
-.pp-contact h2 .pp-grad { color: #fff; }
+.pp-contact h2 .pp-grad {
+  background: linear-gradient(100deg, var(--pp-grad-a), var(--pp-grad-b));
+  -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent;
+}
 .pp-contact p { color: rgba(255,255,255,.85); max-width: 52ch; margin: 0 auto 30px; font-size: 1.08rem; }
 .pp-foot { background: #000; color: rgba(255,255,255,.6); text-align: center; padding: 26px 24px; font-size: .85rem; border-top: 1px solid rgba(255,255,255,.08); }
 .pp-foot a { color: rgba(255,255,255,.8); }
