@@ -122,8 +122,14 @@ h3 { font-size: 1.2rem; margin: 0 0 .3em; }
 .person__photo {
   width: 120px; height: 120px; border-radius: 50%; margin: 0 auto 14px;
   object-fit: cover; object-position: center 22%; background: var(--bg-soft);
-  border: 3px solid var(--line);
+  border: 0;
 }
+.person__ring {
+  width: fit-content; margin: 0 auto 14px; padding: 4px; border-radius: 50%;
+  background: conic-gradient(var(--ucla-blue) 0 33.33%, var(--ph-red) 33.33% 66.66%, var(--ucla-gold) 66.66% 100%);
+}
+.person__ring .person__photo { margin: 0; }
+.person--lead .person__ring { margin: 0; }
 .person__photo--placeholder {
   display: grid; place-items: center; font-weight: 800; font-size: 1.8rem;
   color: var(--ucla-blue); background: var(--bg-soft);
