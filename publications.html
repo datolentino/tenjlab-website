@@ -385,5 +385,29 @@
 
   <script src="js/main.js"></script>
   <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <script>
+    /* Remember scroll position on this page when opening a detail page ("Learn more"),
+       and restore it when the visitor returns via "Back to research". */
+    (function () {
+      var KEY = "researchScrollY";
+      document.addEventListener("click", function (e) {
+        var a = e.target.closest && e.target.closest('a.rcard__link, a[href^="publications/"], a[href^="posters/"]');
+        if (a) { try { sessionStorage.setItem(KEY, String(window.scrollY)); } catch (_) {} }
+      });
+      var ref = document.referrer || "";
+      var fromDetail = /\/(publications|posters)\/[^\/]+\.html/.test(ref);
+      var saved = null;
+      try { saved = sessionStorage.getItem(KEY); } catch (_) {}
+      if (fromDetail && saved !== null) {
+        var y = parseInt(saved, 10) || 0;
+        if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+        var go = function () { window.scrollTo(0, y); };
+        document.addEventListener("DOMContentLoaded", go);
+        window.addEventListener("load", function () { go(); try { sessionStorage.removeItem(KEY); } catch (_) {} });
+      } else {
+        try { sessionStorage.removeItem(KEY); } catch (_) {}
+      }
+    })();
+  </script>
 </body>
 </html>
