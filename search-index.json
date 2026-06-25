@@ -153,13 +153,13 @@
     "title": "Colonialism in healthcare: Experiences of Filipino Americans.",
     "type": "Publication",
     "url": "posters/colonialism-healthcare-filipino-2026.html",
-    "text": "Long, S. N., Boy, P., Aguinaldo, T., Dablo, H., Atienza, E., Sevillano, L., & Tolentino, D. A. (2026). Filipino Americans often face health challenges despite social advantages. Drawing on interviews with 23 Filipino American adults, this study explores how “colonial mentality,” internalized beliefs"
+    "text": "Long, S. N., Boy, P., Aguinaldo, T., Dablo, H., Atienza, E., Sevillano, L., & Tolentino, D. A. (2026). Filipino Americans often face health challenges despite social advantages. Drawing on interviews with 23 Filipino American adults, this study explores how “colonial mentality,” internalized beliefs Published in Communicating Nursing Research, 59."
   },
   {
     "title": "Artificial intelligence in diabetes self-management: An integrative review.",
     "type": "Publication",
     "url": "posters/ai-diabetes-2026.html",
-    "text": "Le, M., Bilog, A. D., Long, S. N., Tonthat, J., Siatong, P., & Tolentino, D. A. (2026). Can AI safely help people manage diabetes? Our team reviewed 25 studies on patient-facing AI tools, like chatbots and large language models. These tools show real promise, but some give inaccurate or unsafe advic"
+    "text": "Le, M., Bilog, A. D., Long, S. N., Tonthat, J., Siatong, P., & Tolentino, D. A. (2026). Can AI safely help people manage diabetes? Our team reviewed 25 studies on patient-facing AI tools, like chatbots and large language models. These tools show real promise, but some give inaccurate or unsafe advic Published in Communicating Nursing Research, 59."
   },
   {
     "title": "A machine learning approach integrating social determinants of health and allostatic load to predict type 2 diabetes.",
@@ -201,13 +201,13 @@
     "title": "Cost-related maladaptive coping and diabetes distress among adults with diabetes.",
     "type": "Publication",
     "url": "posters/cost-coping-diabetes-distress-2025.html",
-    "text": "Wang, C., Patel, M. R., & Tolentino, D. A. (2025). Diabetes is expensive, and some people cope in harmful ways like skipping medications. This study examined whether such cost-related coping is associated with “diabetes distress” (the emotional weight of diabetes) among adults with uncontrolled diab"
+    "text": "Wang, C., Patel, M. R., & Tolentino, D. A. (2025). Diabetes is expensive, and some people cope in harmful ways like skipping medications. This study examined whether such cost-related coping is associated with “diabetes distress” (the emotional weight of diabetes) among adults with uncontrolled diab Published in Communicating Nursing Research, 58."
   },
   {
     "title": "Geospatial mapping of diabetes programs and equity index among Asian Americans in Los Angeles.",
     "type": "Publication",
     "url": "posters/geospatial-diabetes-programs-la-2024.html",
-    "text": "Tolentino, D. A., Roca, R. P. E., III, Lance, D., Peña, M., Palao, G. M., Palao, G. J., Carpizo, K., Adlao, A., & Horne, R. (2024). Diabetes hits Asian Americans hard, yet fewer than one in ten join diabetes education and support programs. This study mapped where those programs sit across Los Angele"
+    "text": "Tolentino, D. A., Roca, R. P. E., III, Lance, D., Peña, M., Palao, G. M., Palao, G. J., Carpizo, K., Adlao, A., & Horne, R. (2024). Diabetes hits Asian Americans hard, yet fewer than one in ten join diabetes education and support programs. This study mapped where those programs sit across Los Angele Published in Communicating Nursing Research, 57."
   },
   {
     "title": "The relationship between task-technology fit and nurses’ performance in the EHR.",
@@ -616,5 +616,41 @@
     "type": "Page",
     "url": "contact.html",
     "text": "Get in touch with the TenJ Lab. Email datolentino@sonnet.ucla.edu. LinkedIn and Instagram."
+  },
+  {
+    "title": "Gender differences in diabetes distress within a digital intervention",
+    "type": "Publication",
+    "url": "posters/gender-diabetes-distress-2026.html",
+    "text": "Wang, C., Patel, M. R., & Tolentino, D. A. (2026). Published in Communicating Nursing Research, 59. Diabetes distress, the emotional burden of diabetes, often weighs more on women. This study examined gender differences in distress over 12 months and whether a digital program addressing unmet social needs (CareAvenue) worked differently by gender, using a randomized trial of 598 adults with diabetes."
+  },
+  {
+    "title": "Implementation of a culturally tailored outpatient case management program for Filipino Americans with type 2 diabetes",
+    "type": "Publication",
+    "url": "posters/case-management-filipino-t2d-2026.html",
+    "text": "Fontejon, R., Song, Y., Cuenca, E., & Tolentino, D. A. (2026). Published in Communicating Nursing Research, 59. Filipino Americans face a high burden of type 2 diabetes, yet standard education rarely addresses cultural values like pakikisama, hiya, and tiwala. This DNP project evaluated a six-week culturally tailored outpatient case management program versus usual care to improve activation, adherence, and glycemic control."
+  },
+  {
+    "title": "To chat or not to chat: A comparative analysis of ChatGPT and a statistical program",
+    "type": "Publication",
+    "url": "posters/chatgpt-vs-spss-2025.html",
+    "text": "Tolentino, D. A., Boy, P., Long, S. N., Bilog, A. D., Kohout, E., Skrine Jeffers, K., & Shabaik, H. (2025). Published in Communicating Nursing Research, 58. Can an AI chatbot analyze research data as reliably as standard software? We compared ChatGPT-4 with SPSS on the same dataset (n = 1,339) to assess how similar and reliable the results were."
+  },
+  {
+    "title": "Digital health usage and information-sharing behaviors: A national survey data analysis",
+    "type": "Publication",
+    "url": "posters/digital-health-usage-2023.html",
+    "text": "Tolentino, D. A., & Jiang, Y. (2023). Published in Communicating Nursing Research, 56. Digital health tools can help, but use and data-sharing are uneven. We analyzed a national survey of 3,865 U.S. adults to identify factors linked to using digital health tools and sharing health information with providers, family, and social media."
+  },
+  {
+    "title": "Mining information in EHR logs: An alternative data source for EHR workflow analysis",
+    "type": "Publication",
+    "url": "posters/mining-ehr-logs-2020.html",
+    "text": "Tolentino, D. A., Gephart, S. M., & Subbian, V. (2020). Published in Communicating Nursing Research, 53. Every click in the electronic health record leaves a trace. We mined EHR audit logs using sequential pattern mining and Markov chain analysis to map how nurses navigate the system."
+  },
+  {
+    "title": "Sequential pattern analysis of nurses' EHR navigation and documentation",
+    "type": "Publication",
+    "url": "posters/sequential-pattern-ehr-2017.html",
+    "text": "Tolentino, D. A., & Gephart, S. M. (2017). Published in Communicating Nursing Research, 50. An early poster exploring how sequential pattern analysis could reveal how nurses navigate and document in the electronic health record, setting the stage for the lab's later computational ethnography studies."
   }
 ]
