@@ -29,3 +29,6 @@ publications/Posters/
 # Team photo cutout sources + originals (kept local, not published)
 images/team/*.png
 images/team/Images original do not use/
+
+# KAPWA flyer source PNGs (publish optimized .jpg instead)
+images/projects/*.png

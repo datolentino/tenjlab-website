@@ -109,6 +109,14 @@ h3 { font-size: 1.2rem; margin: 0 0 .3em; }
 /* ---------- Cards / grid ---------- */
 .grid { display: grid; gap: 24px; }
 .grid--2 { grid-template-columns: repeat(2, 1fr); }
+
+/* Recruitment flyers: full image on mobile, equal height + centered on desktop */
+.kapwa-flyers img { width: 100%; height: auto; display: block; border: 1px solid var(--line); border-radius: 12px; }
+@media (min-width: 700px) {
+  .kapwa-flyers { align-items: start; }
+  .kapwa-flyers a { display: flex; justify-content: center; }
+  .kapwa-flyers img { width: auto; height: 560px; max-width: 100%; }
+}
 .grid--3 { grid-template-columns: repeat(3, 1fr); }
 .grid--4 { grid-template-columns: repeat(4, 1fr); }
 
