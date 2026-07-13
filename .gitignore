@@ -32,3 +32,5 @@ images/team/Images original do not use/
 
 # KAPWA flyer source PNGs (publish optimized .jpg instead)
 images/projects/*.png
+
+images/projects/*.pdf
