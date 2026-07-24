@@ -447,7 +447,7 @@ h3 { font-size: 1.2rem; margin: 0 0 .3em; }
 .art-split img { width: 100%; border-radius: 16px; box-shadow: var(--shadow); display: block; }
 .art-split .cap { color: var(--muted); font-size: .85rem; margin-top: 8px; }
 
-.keythemes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.keythemes { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; }
 .kt { background: var(--bg); border: 1px solid var(--line); border-top: 4px solid var(--accent, var(--ucla-blue)); border-radius: 12px; padding: 20px; }
 .kt .n { font-family: "Bricolage Grotesque","Inter",sans-serif; font-weight: 800; font-size: 1.7rem; color: var(--accent, var(--ucla-blue)); line-height: 1; }
 .kt h3 { margin: 8px 0 4px; font-size: 1.05rem; }
