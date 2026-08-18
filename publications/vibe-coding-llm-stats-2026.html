@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vibe coding for statistical analysis using large language models | TenJ Lab</title>
+  <meta name="description" content="A plain-language overview of a TenJ Lab study on AI-assisted, human-in-the-loop &quot;vibe coding&quot; for statistical analysis, published in Nursing Research." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="icon" type="image/svg+xml" href="../images/emblem.svg" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="../index.html">
+        <img class="brand__mark" src="../images/emblem.svg" alt="TenJ Lab logo" />
+        <span><span class="brand__name">TenJ Lab</span></span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="../index.html">About</a></li><li><a href="../team.html">Team</a></li>
+        <li><a href="../news.html">Lab News</a></li><li><a href="../media.html">Media</a></li><li><a href="../publications.html" class="active">Research</a></li>
+        <li><a href="../projects.html">Projects</a></li><li><a href="../contact.html">Contact</a></li>
+      <li><a href="../search.html" class="nav-search" aria-label="Search" title="Search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg><span class="nav-search__t">Search</span></a></li></ul>
+    </nav>
+  </header>
+  <section class="art-hero">
+    <div class="container" style="max-width:920px;">
+      <p style="margin:0 0 16px;"><a class="art-back" href="../publications.html">&larr; Back to research</a></p>
+      <p class="eyebrow">Publication &middot; Nursing Research &middot; 2026</p>
+      <h1>Vibe coding for statistical analysis using large language models</h1>
+      <p class="authors">Tolentino, D. A., Kohout, E., Boy, P., &amp; Siddiq, H. (2026). <em>Nursing Research.</em> Advance online publication.</p>
+      <div class="chips"><span class="chip">Artificial intelligence</span><span class="chip">Large language models</span><span class="chip">Statistical methods</span></div>
+      <a class="btn btn--primary" href="https://doi.org/10.1097/NNR.0000000000000942">Read the full article</a>
+    </div>
+  </section>
+
+  <section class="takeaway">
+    <div class="container">
+      <div class="label">The big idea</div>
+      <p>AI &ldquo;vibe coding&rdquo; can help run a statistical analysis, but it can also produce convincing wrong answers, so human oversight and verification stay essential.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container" style="max-width:920px;">
+      <div class="glance"><div class="card"><div class="k">Who</div><div class="v">A clean graduate-admissions data set used as a proof-of-concept case</div></div><div class="card"><div class="k">How</div><div class="v">Human-in-the-loop vibe coding in Cursor, generating R code for logistic regression from plain-language prompts</div></div><div class="card"><div class="k">What we learned</div><div class="v">Core results matched a published reference, but a confidence-interval error was missed on first review</div></div></div>
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="container" style="max-width:920px;">
+      <div style="max-width:760px;">
+        <h2>In plain language</h2>
+        <p>&ldquo;Vibe coding&rdquo; means asking an AI model, in everyday language, to write and run code for you instead of writing that code by hand. We tested whether this approach can carry out a real statistical analysis. Using a small, clean data set, the AI produced code that checked and cleaned the data, ran a logistic regression, and made charts. The main results matched a trusted published example, but one output, a confidence interval for a predicted probability, was wrong, and we did not catch it on our first pass.</p>
+        <h2 style="margin-top:24px;">About this study</h2>
+        <p>We treated vibe coding as a proof of concept and worked through a deliberate, human-in-the-loop workflow: framing the research question, defining the variables, organizing project folders, documenting each decision, using retrieval-augmented generation, and applying prompt-engineering techniques. Working in Cursor (v1.5.11), we modeled admission status as a function of Graduate Record Exam scores, grade point average, and undergraduate rank. The AI generated the analysis in R, and we compared the output against a published reference posted on a public website.</p>
+        <p>The results were mixed. Regression coefficients, <em>p</em> values, and model-fit statistics matched the reference output, yet an error appeared in the predicted-probability confidence interval that slipped past our initial review. The lesson is that vibe coding can lower the barrier to analysis, but it should be used with caution: structured verification and safeguards, transparent reporting, and appropriate statistical and methodological oversight.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container" style="max-width:920px;">
+      <h2>Key themes</h2>
+      <div class="keythemes" style="margin-top:18px;"><div class="kt"><div class="n">1</div><h3>Human in the loop</h3><p>The researcher stays responsible for framing, checking, and verifying every step, not the model.</p></div><div class="kt"><div class="n">2</div><h3>A structured workflow</h3><p>Clear research questions, defined variables, organized files, documented decisions, and careful prompting.</p></div><div class="kt"><div class="n">3</div><h3>Valid and invalid outputs</h3><p>Core results matched a published reference, but an error slipped through on first review.</p></div><div class="kt"><div class="n">4</div><h3>Expertise still matters</h3><p>Statistical training and methodological oversight remain essential when using these tools.</p></div></div>
+    </div>
+  </section>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div><h4>TenJ Lab</h4><p>UCLA School of Nursing.<br />Nursing science &amp; informatics for diabetes prevention and care.</p></div>
+        <div><h4>Explore</h4><ul>
+          <li><a href="../index.html">About</a></li><li><a href="../team.html">Team</a></li><li><a href="../news.html">Lab News</a></li><li><a href="../media.html">Media</a></li>
+          <li><a href="../publications.html">Research</a></li><li><a href="../projects.html">Projects</a></li><li><a href="../contact.html">Contact</a></li>
+        </ul></div>
+        <div><h4>Connect</h4><ul>
+          <li><a href="mailto:datolentino@sonnet.ucla.edu">datolentino@sonnet.ucla.edu</a></li>
+          <li><a href="https://www.linkedin.com/in/atolen/">LinkedIn</a></li>
+          <li><a href="https://www.instagram.com/tenjlab">Instagram @tenjlab</a></li>
+        </ul></div>
+      </div>
+      <div class="footer-bottom">&copy; <span id="year">2026</span> TenJ Lab. All rights reserved. &middot; <a href="../privacy.html" style="color:inherit;text-decoration:underline;">Privacy</a><span class="footer-built">Built with <a href="https://claude.com/claude-code" target="_blank" rel="noopener">Claude Code</a>. All content is reviewed before publishing.</span></div>
+    </div>
+  </footer>
+  <script src="../js/main.js"></script>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
