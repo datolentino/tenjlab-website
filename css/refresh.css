@@ -1,0 +1,249 @@
+/* ============================================================
+   TenJ Lab visual refresh (Newsreader serif + clean/minimal).
+   Consolidated from the approved 'Soft' preview. Loaded after
+   styles.css / personal.css to layer the refreshed look.
+   ============================================================ */
+
+/* ---- typography (Newsreader serif for display) ---- */
+/* ============================================================
+   PREVIEW-ONLY restyle overlay — layered on top of styles.css /
+   personal.css. Applies two design cues from the Rajpurkar Lab
+   site: (1) an elegant Newsreader serif for display type, and
+   (2) a lighter, calmer heading treatment. All existing content,
+   images, colors, and layout are left untouched.
+   ============================================================ */
+
+@font-face{font-family:"Newsreader";font-style:normal;font-weight:100 900;font-display:swap;
+  src:url("../fonts/nr-normal.woff2") format("woff2");}
+@font-face{font-family:"Newsreader";font-style:italic;font-weight:100 900;font-display:swap;
+  src:url("../fonts/nr-italic.woff2") format("woff2");}
+
+:root{ --serif-display:"Newsreader","Iowan Old Style","Palatino Linotype",Georgia,serif; }
+html{ font-optical-sizing:auto; }
+
+/* Every display element that currently uses Bricolage Grotesque,
+   across styles.css and personal.css, switched to the serif. */
+h1, h2, h3, h4,
+.brand__name, .news-year, .phero__title, .year-label, .group-title,
+.takeaway p, .kt .n, .stripe .num,
+.pp-nav__brand, .pp-hero h1, .pp-h2, .pp-contact h2,
+.pp-stat__n, .pp-kicker__num, .pp-quote__mark, .pp-quote p,
+.pp-rc__no, .pp-rc h3, .pp-pub__yr, .pp-pub__t, .pp-colhead, .pp-tstat__n,
+.pp-eval blockquote::before,
+.art-hero h1, .rcard__title{
+  font-family:var(--serif-display) !important;
+  font-weight:500 !important;
+  letter-spacing:-0.014em !important;
+}
+
+/* Big hero lines read best a touch lighter and tighter. */
+.phero__title, .pp-hero h1, .art-hero h1, .pp-contact h2{
+  font-weight:440 !important;
+  letter-spacing:-0.022em !important;
+  line-height:1.06 !important;
+}
+
+/* Large gold / stat numerals: serif at regular weight looks refined. */
+.stripe .num, .pp-stat__n, .pp-kicker__num, .kt .n, .pp-tstat__n{
+  font-weight:500 !important;
+}
+
+
+/* ---- refreshed color / layout / interactions ---- */
+/* ============================================================
+   PREVIEW variants — three color/box treatments, toggled live by
+   the floating switcher. data-skin on <html> selects one.
+   Shared base (any skin): remove filled boxes, shadows, and heavy
+   tints, leaving hairline structure. Per-skin blocks add color back
+   in increasing amounts (1 minimal -> 3 soft). Content/images kept.
+   ============================================================ */
+
+:root{ --v-ink:#17252c; --v-line:#e7e9ea; --v-muted:#5b6a72;
+       --v-accent:#2774ae; --v-gold:#b98900; --v-red:#ce1126; }
+
+/* ---------- shared de-box base (skins 1,2,3) ---------- */
+:root .card,
+:root .glance .card,
+:root .rcard,
+:root .npv a,
+:root .pp-rc,
+:root .pp-eval,
+:root .kt{
+  background:transparent !important; box-shadow:none !important;
+  border:1px solid var(--v-line) !important;
+}
+:root .rcard:hover,
+:root .npv a:hover,
+:root .pp-rc:hover{ transform:none !important; box-shadow:none !important; }
+:root .kt{ border-top:1px solid var(--v-line) !important; }
+:root .section--soft{ background:#f5f6f8 !important; } /* alternating grey/white rhythm */
+:root .glance .ico{ background:transparent !important; }
+:root .takeaway{ background:transparent !important;
+  border-top:1px solid var(--v-line); border-bottom:1px solid var(--v-line); }
+:root .takeaway p{ color:var(--v-ink) !important; }
+:root .joinband{ background:transparent !important; color:var(--v-ink) !important;
+  border-top:1px solid var(--v-line); }
+:root .joinband .lead{ color:var(--v-muted) !important; }
+:root .news-year{ border-bottom:1px solid var(--v-line) !important; }
+
+/* stats stripe: flatten the dark box so ink numbers read clearly */
+:root .stripe{ background:transparent !important; color:var(--v-ink) !important; }
+:root .stripe .lbl{ color:var(--v-muted) !important; }
+
+/* subtle hairline between major sections (e.g. What we do / Featured) */
+:root .section + .section,
+:root .section + .stripe,
+:root .stripe + .section,
+:root .pp-sec + .pp-sec{ border-top:1px solid rgba(22,76,102,.32) !important; }
+
+/* personal-page color blocks -> flattened */
+:root .pp-stats{ background:#fff !important; color:var(--v-ink) !important;
+  border-top:1px solid var(--v-line); border-bottom:1px solid var(--v-line); }
+:root .pp-stats__grid{ background:var(--v-line) !important; border-top:0 !important; }
+:root .pp-stat{ background:#fff !important; }
+:root .pp-stat__l{ color:var(--v-muted) !important; }
+:root .pp-quote{ background:transparent !important; color:var(--v-ink) !important;
+  box-shadow:none !important; border:1px solid var(--v-line) !important; }
+:root .pp-quote p{ color:var(--v-ink) !important; }
+
+/* footer -> clean white, compact, hairline rule (RL-style). The
+   "Explore" column duplicates the top menu, so it's dropped here. */
+:root .site-footer{ background:#fff !important; color:var(--v-muted) !important;
+  border-top:1px solid var(--v-line) !important; padding:26px 0 20px !important; }
+:root .site-footer h4{ color:var(--v-ink) !important; font-size:.95rem !important; margin-bottom:6px !important; }
+:root .site-footer a{ color:var(--v-muted) !important; }
+:root .site-footer p{ font-size:.85rem !important; }
+:root .footer-grid{ display:flex !important; flex-wrap:wrap !important;
+  gap:14px 56px !important; align-items:flex-start !important; }
+:root .footer-grid > div:nth-child(2){ display:none !important; } /* Explore = already in menu */
+:root .footer-bottom{ border-top-color:var(--v-line) !important; color:var(--v-muted) !important;
+  margin-top:18px !important; padding-top:14px !important; font-size:.8rem !important; }
+:root .footer-built, :root .footer-built a{ color:var(--v-muted) !important; }
+
+/* dark hero / CTA gradient blocks -> white with ink text */
+:root .art-hero{ background:#fff !important; color:var(--v-ink) !important; }
+:root .art-hero h1{ color:var(--v-ink) !important; }
+:root .art-back{ color:#164c66 !important; opacity:1 !important; }
+:root .art-hero .eyebrow,
+:root .art-hero .authors,
+:root .art-hero p{ color:var(--v-muted) !important; }
+/* research chips: small pills, each a different light color (cycles every 4) */
+:root .art-hero .chip{ background:transparent !important; border:1px solid !important;
+  font-size:.64rem !important; font-weight:700 !important; padding:2px 9px !important;
+  border-radius:999px !important; text-transform:uppercase !important; letter-spacing:.06em !important; }
+:root .art-hero .chip:nth-child(4n+1){ color:#3277a8 !important; border-color:rgba(39,116,174,.55) !important; }
+:root .art-hero .chip:nth-child(4n+2){ color:#9a7a1e !important; border-color:rgba(201,151,0,.6) !important; }
+:root .art-hero .chip:nth-child(4n+3){ color:#b3555b !important; border-color:rgba(206,17,38,.5) !important; }
+:root .art-hero .chip:nth-child(4n+4){ color:#2f7d70 !important; border-color:rgba(20,120,110,.55) !important; }
+:root .art-hero .chips{ gap:6px !important; margin-bottom:22px !important; }
+
+/* inline "Now recruiting" label + other proj-meta accents -> muted */
+:root .proj-meta{ color:var(--v-muted) !important; }
+
+/* top tri-color bar -> slimmer and softened (keeps a hint of brand) */
+:root .site-header::before{ height:3px !important; opacity:.5 !important; }
+
+/* ================= SKIN 3 — Soft (subtle: one muted navy accent) ===
+   Interactive elements use a single desaturated navy (#164c66), the
+   way the RL site does. Buttons are quiet outlines, not solid fills.
+   Hero words keep a whisper of warm color; everything else is ink. */
+:root{ --v-accent:#164c66; }
+:root .btn--primary,
+:root .phero__cta .btn--primary,
+:root .pp-btn--gold,
+:root .rcard__link,
+:root .btn--dark,
+:root .phero__cta .btn--dark,
+:root .art-hero .btn--primary{
+  background:transparent !important; color:#164c66 !important;
+  border:1px solid #164c66 !important; box-shadow:none !important; }
+:root .phero__title .hl{ color:#8a6d1f !important; }   /* muted gold */
+:root .phero__title .hl-b{ color:#9e3b3b !important; } /* muted brick */
+:root .stripe .num,
+:root .pp-stat__n,
+:root .pp-kicker__num{ color:var(--v-ink) !important; }
+:root .art-hero .eyebrow{ color:var(--v-muted) !important; }
+:root a.link,
+:root .pp-rc__work a:hover{ color:#164c66 !important; }
+/* Research pills: distinct visible outlines — navy for Paper, amber for Poster */
+:root .pp-tag--paper{ background:transparent !important; color:#164c66 !important;
+  border:1.5px solid #164c66 !important; font-weight:700 !important; }
+:root .pp-tag--poster{ background:transparent !important; color:#8a6600 !important;
+  border:1.5px solid #c69214 !important; font-weight:700 !important; }
+
+/* ================= button hover states (all skins) ================= */
+:root .btn--primary,
+:root .phero__cta .btn--primary,
+:root .rcard__link,
+:root .pp-btn--gold,
+:root .art-hero .btn--primary,
+:root .btn--dark{
+  transition:background .16s ease, color .16s ease, border-color .16s ease, opacity .16s ease !important;
+}
+/* Skin 3 (outlined navy): fill in on hover */
+:root .btn--primary:hover,
+:root .phero__cta .btn--primary:hover,
+:root .rcard__link:hover,
+:root .pp-btn--gold:hover,
+:root .btn--dark:hover,
+:root .phero__cta .btn--dark:hover,
+:root .art-hero .btn--primary:hover{
+  background:#164c66 !important; color:#fff !important; border-color:#164c66 !important; }
+
+/* ================= burger / mobile menu (stripped-down) =================
+   Scoped to the OPEN dropdown (.open) only, so the desktop nav row is
+   never boxed regardless of viewport width. */
+:root .nav-toggle{ color:var(--v-ink) !important; }
+:root .nav-links.open{
+  background:#fff !important; border:1px solid var(--v-line) !important;
+  box-shadow:0 16px 34px rgba(0,0,0,.12) !important; padding:4px 0 !important; }
+:root .nav-links.open li + li{ border-top:1px solid var(--v-line) !important; }
+:root .nav-links.open a{ color:var(--v-ink) !important; }
+:root .nav-links.open a:hover,
+:root .nav-links.open a:active{ background:#f4f6f7 !important; color:#164c66 !important; }
+:root .nav-links.open a::after{ color:#164c66 !important; }
+:root .nav-links.open a.active{ color:#164c66 !important; }
+:root body.nav-open::before{
+  background:rgba(18,24,28,.30) !important;
+  -webkit-backdrop-filter:blur(7px) !important; backdrop-filter:blur(7px) !important; }
+
+/* personal-page menu */
+:root .pp-nav__links.open{
+  background:#fff !important; border:1px solid var(--v-line) !important;
+  box-shadow:0 16px 34px rgba(0,0,0,.12) !important; }
+:root .pp-nav__links.open a{ color:var(--v-ink) !important; }
+:root .pp-nav__links.open a + a{ border-top:1px solid var(--v-line) !important; }
+:root .pp-nav__links.open a:hover{ background:#f4f6f7 !important; color:#164c66 !important; }
+:root .pp-nav__links.open .pp-nav__cta{
+  background:transparent !important; color:#164c66 !important; border:1px solid #164c66 !important; }
+:root body.pp-nav-open::before{
+  background:rgba(18,24,28,.30) !important;
+  -webkit-backdrop-filter:blur(7px) !important; backdrop-filter:blur(7px) !important; }
+
+/* Media page "Read the article" links: match card buttons per skin */
+:root .media-item__link{ transition:background .16s ease, color .16s ease, border-color .16s ease !important; }
+:root .media-item__link{ background:transparent !important; color:#164c66 !important; border:1px solid #164c66 !important; }
+:root .media-item__link:hover{ background:#164c66 !important; color:#fff !important; }
+
+/* ===== RL-style list-row hover (demo on personal "Selected work") =====
+   subtle bg tint + slide-right on hover, like rajpurkarlab project rows */
+:root .pp-rc__work li{ position:relative !important; margin:0 -12px !important;
+  padding:7px 28px 7px 12px !important; border-radius:8px !important;
+  transition:background .16s ease-out, padding .16s ease-out !important; }
+:root .pp-rc__work li:hover{ background:#e2eaf1 !important; padding-left:22px !important; }
+:root .pp-rc__work li::after{ content:"\2197"; position:absolute; right:12px; top:7px;
+  color:#164c66; font-weight:700; opacity:0; pointer-events:none;
+  transition:opacity .16s ease-out, transform .16s ease-out; }
+:root .pp-rc__work li:hover::after{ opacity:1; transform:translate(3px,-3px); }
+:root .pp-rc__work a:hover{ text-decoration:none !important; color:#164c66 !important; }
+
+/* same RL-style list-row hover on personal "Selected publications" rows */
+:root .pp-pub{ position:relative !important; margin:0 -12px !important;
+  padding:18px 30px 18px 12px !important; border-radius:8px !important; cursor:pointer !important;
+  transition:background .16s ease-out, padding .16s ease-out !important; }
+:root .pp-pub:hover{ background:#e2eaf1 !important; padding-left:22px !important; }
+:root .pp-pub::after{ content:"\2197"; position:absolute; right:14px; top:18px;
+  color:#164c66; font-weight:700; opacity:0; pointer-events:none;
+  transition:opacity .16s ease-out, transform .16s ease-out; }
+:root .pp-pub:hover::after{ opacity:1; transform:translate(3px,-3px); }
+
