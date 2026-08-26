@@ -176,6 +176,60 @@
     </div>
   </footer>
 
+  <!-- ===== Recruitment pop-up: wearables study ===== -->
+  <style>
+    .rp-overlay{ position:fixed; inset:0; z-index:1000; display:flex; align-items:center; justify-content:center;
+      padding:20px; background:rgba(18,24,28,.55); -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px);
+      opacity:0; visibility:hidden; transition:opacity .25s ease, visibility .25s ease; }
+    .rp-overlay.rp-open{ opacity:1; visibility:visible; }
+    .rp-card{ position:relative; width:100%; max-width:460px; background:#fff; border-radius:16px;
+      border:1px solid #e7e9ea; box-shadow:0 24px 60px rgba(0,0,0,.28); padding:34px 32px 28px;
+      transform:translateY(12px) scale(.98); transition:transform .25s ease; }
+    .rp-open .rp-card{ transform:none; }
+    .rp-close{ position:absolute; top:12px; right:14px; width:34px; height:34px; border:0; border-radius:50%;
+      background:transparent; color:#5b6a72; font-size:1.5rem; line-height:1; cursor:pointer; }
+    .rp-close:hover{ background:#f2f4f6; color:#17252c; }
+    .rp-eyebrow{ font-family:Inter,sans-serif; text-transform:uppercase; letter-spacing:.14em; font-size:.72rem;
+      font-weight:700; color:#164c66; margin:0 0 12px; display:flex; align-items:center; gap:8px; }
+    .rp-eyebrow .rp-dot{ width:8px; height:8px; border-radius:50%; background:#164c66; display:inline-block; }
+    .rp-card h2{ font-family:"Newsreader","Iowan Old Style","Palatino Linotype",Georgia,serif; font-weight:500;
+      font-size:1.7rem; line-height:1.16; letter-spacing:-.015em; color:#17252c; margin:0 0 12px; }
+    .rp-card p{ font-family:Inter,sans-serif; color:#3a4650; font-size:.97rem; line-height:1.55; margin:0 0 10px; }
+    .rp-elig{ margin:12px 0 6px; padding:0; list-style:none; font-size:.92rem; color:#3a4650; }
+    .rp-elig li{ position:relative; padding-left:22px; margin:5px 0; }
+    .rp-elig li::before{ content:"\2713"; position:absolute; left:0; color:#164c66; font-weight:700; }
+    .rp-perk{ font-weight:700; color:#17252c; }
+    .rp-actions{ display:flex; align-items:center; gap:14px; margin-top:20px; flex-wrap:wrap; }
+    .rp-cta{ display:inline-block; background:#164c66; color:#fff; text-decoration:none; font-family:Inter,sans-serif;
+      font-weight:700; font-size:.97rem; padding:12px 22px; border-radius:10px; border:1px solid #164c66;
+      transition:background .15s ease; }
+    .rp-cta:hover{ background:#0f3547; }
+    .rp-later{ background:transparent; border:0; color:#5b6a72; font-family:Inter,sans-serif; font-weight:600;
+      font-size:.92rem; cursor:pointer; padding:6px 4px; }
+    .rp-later:hover{ color:#17252c; text-decoration:underline; text-underline-offset:2px; }
+    .rp-fine{ font-family:Inter,sans-serif; font-size:.75rem; color:#8a969c; margin:16px 0 0; }
+    @media (prefers-reduced-motion:reduce){ .rp-overlay,.rp-card{ transition:none; } }
+  </style>
+  <div class="rp-overlay" id="recruit-popup" role="dialog" aria-modal="true" aria-labelledby="rp-title" aria-hidden="true">
+    <div class="rp-card">
+      <button class="rp-close" type="button" aria-label="Close">&times;</button>
+      <p class="rp-eyebrow"><span class="rp-dot"></span> Now recruiting</p>
+      <h2 id="rp-title">Do you use a wearable to track your health?</h2>
+      <p>Adults 55 and older in the U.S. who use a wearable device, or are willing to receive a free smartwatch, are invited to a UCLA study on wearables and self-management.</p>
+      <ul class="rp-elig">
+        <li>55 or older, living in the U.S.</li>
+        <li>Two or more chronic conditions</li>
+        <li>A short survey and one Zoom interview</li>
+      </ul>
+      <p class="rp-perk">$50 electronic gift card as thanks.</p>
+      <div class="rp-actions">
+        <a class="rp-cta" href="https://bit.ly/healthux" target="_blank" rel="noopener">Take part &rarr;</a>
+        <button class="rp-later" type="button">Maybe later</button>
+      </div>
+      <p class="rp-fine">UCLA study &middot; PI Dr. Dante Anthony Tolentino &middot; bit.ly/healthux</p>
+    </div>
+  </div>
+
   <script src="js/main.js"></script>
   <script>
     /* Auto-populate "Latest news" with the 3 most recent posts from news.html */
@@ -206,5 +260,6 @@
   </script>
 
   <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <script src="js/recruit-popup.js"></script>
 </body>
 </html>
